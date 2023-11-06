@@ -38,6 +38,7 @@
 - [ ] Notifications when some events are verified (for example when a user follows me or i get a comment under a post)
 
 # Mockup Software
+- [ ] Figma
 
 
 # Design Goals
