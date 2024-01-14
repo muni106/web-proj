@@ -14,8 +14,10 @@
     <main>
         <h1 class="fw-bolder my-5">Sign in to SocialName</h1>
         <form action="submit" class="d-grid gap-4 d-block mx-2">
-            <label for="username" class="d-none">Username or email: </label>
-            <input type="text" id="username" name="username" placeholder="email, username" class="w-100 p-3 m-1" />
+            <fieldset class="form-floating">
+                <label for="username" class="d-none">Username or email: </label>
+                <input type="text" id="username" name="username" placeholder="email, username" class="w-100 p-3 m-1" />
+            </fieldset>
             <label for="password" class="d-none">Password: </label>
             <input type="password" id="password" name="password" placeholder="password" class="w-100 p-3 m-1" />
             <button type="submit" class="btn bg-black block-btn text-white fw-bold rounded-pill d-block mx-3">Log in</button>
