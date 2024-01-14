@@ -1,0 +1,16 @@
+services:
+  xampp:
+    image: tomsik68/xampp:8
+    ports:
+      - "41062:80"
+      - "41061:22"
+    volumes:
+      - ./my_web_pages:/www
+  
+  achecker:
+    image: pixelandpen/achecker
+    ports:
+      - "8000:80"
+      - "3307:3306"
+
+    
