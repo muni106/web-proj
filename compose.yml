@@ -1,12 +1,13 @@
 services:
   xampp:
     platform: linux/x86_64
-    image: tomsik68/xampp:8
+    build: .
     ports:
       - "41062:80"
       - "41061:22"
     volumes:
       - ./my_web_pages:/www
+      
   
   achecker:
     platform: linux/x86_64
