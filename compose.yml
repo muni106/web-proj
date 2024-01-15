@@ -1,5 +1,6 @@
 services:
   xampp:
+    platform: linux/x86_64
     image: tomsik68/xampp:8
     ports:
       - "41062:80"
@@ -8,6 +9,7 @@ services:
       - ./my_web_pages:/www
   
   achecker:
+    platform: linux/x86_64
     image: pixelandpen/achecker
     ports:
       - "8000:80"
