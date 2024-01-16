@@ -8,29 +8,35 @@
     <title>Create your account</title>
 </head>
 <body>
+    <script type="text/javascript" src="sha512.js"></script>
+    <script type="text/javascript" src="forms.js"></script>
+    <?php
+    if(isset($_GET['error'])) { 
+        echo 'Error Logging In!';
+    }
+    ?>
     <header class="d-flex justify-content-center">
         <img src="./logo.jpg" alt="SocialName" class="w-25"/>
     </header>
     <main>
         <h1 class="fw-bolder my-5">Create your account</h1>
-        <form action="submit" class="d-grid gap-3">
+        <form action="process_signup.php" method="post" name="signup_form" class="d-grid gap-3">
             <fieldset class="form-floating">
-                <input type="text" id="username" placeholder="username" class="form-control border border-dark border-3 rounded-0" />
+                <input type="text" id="username" name="username" placeholder="username" class="form-control border border-dark border-3 rounded-0" />
                 <label for="username" class="text-secondary">Username</label>
             </fieldset>
 
             <fieldset class="form-floating">
-                <input type="email" id="email" placeholder="name@example.com" class="form-control border border-dark border-3 rounded-0" />
+                <input type="email" id="email" name="email" placeholder="name@example.com" class="form-control border border-dark border-3 rounded-0" />
                 <label for="email" class="text-secondary">Email</label>
             </fieldset>
             
             <fieldset class="form-floating">
-                <input type="password" id="password" placeholder="password" class="form-control border border-dark border-3 rounded-0" />
+                <input type="password" id="password" name="password" placeholder="password" class="form-control border border-dark border-3 rounded-0" />
                 <label for="password" class="text-secondary">Password</label>
             </fieldset>
 
-            <button type="submit" class="btn bg-black block-btn text-white fw-bold rounded-pill d-block mx-3 my-1">Sign up</button>
-            <button type="reset" class="btn btn-secondary block-btn fw-bold rounded-pill d-block mx-3 my-1">Clear form</button>
+            <input type="button" value="Sign up" onclick="formhash(this.form, this.form.password);" class="btn bg-black block-btn text-white fw-bold rounded-pill d-block mx-3" />
         </form>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
