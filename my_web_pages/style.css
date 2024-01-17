@@ -2,6 +2,7 @@ header img {
     width: 30%;
 }
 
-main {
-    margin: 5%;
+code {
+    background-color: lightgray;
+    color: black;
 }
