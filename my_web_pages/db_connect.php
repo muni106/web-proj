@@ -79,7 +79,6 @@ function checkbrute($user_id, $mysqli) {
 
  function login_check($mysqli) {
     // Verifica che tutte le variabili di sessione siano impostate correttamente
-    print_r($_SESSION);
     if(isset($_SESSION['user_id'], $_SESSION['username'], $_SESSION['login_string'])) {
       $user_id = $_SESSION['user_id'];
       $login_string = $_SESSION['login_string'];
