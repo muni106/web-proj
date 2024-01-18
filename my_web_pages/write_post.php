@@ -14,7 +14,7 @@
     </nav>
     <main class="m-2">
         <h1 class="fw-bolder py-3 d-inline col-10">Write a post</h1>
-        <form action="" method="post" class="d-grid gap-4 my-2">
+        <form action="./process_write_post.php" method="post" enctype="multipart/form-data" class="d-grid gap-4 my-2">
             <fieldset class="row">
                 <img src="./logo.jpg" alt="authors' name" class="col-2 w-25"/>
                 <label for="text" class="d-none">Write the main content here</label>
@@ -26,11 +26,11 @@
             </fieldset>
             <fieldset>
                 <label for="image" class="form-label">Load your image here</label>
-                <input id="image" type="file" class="form-control rounded-0"  />
+                <input name="image" id="image" type="file" class="form-control rounded-0"  />
             </fieldset>
             <fieldset class="d-flex justify-content-center">
                 <label for="publish" class="d-none">Publish this post</label>
-                <input type="button" value="Publish" id="publish" class="btn bg-black block-btn text-white fw-bold rounded-pill d-block w-75"/>
+                <input type="submit" value="Publish" id="publish" class="btn bg-black block-btn text-white fw-bold rounded-pill d-block w-75"/>
             </fieldset>
         </form>
     </main>
