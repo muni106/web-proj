@@ -9,19 +9,7 @@
     <title>For you</title>
 </head>
 <body>
-    <header class="fixed-top">
-        <nav class="navbar navbar-expand-lg d-flex justify-content-between align-items-center p-3 bg-white">
-            <a href="">
-                photo
-                <!-- <img src="./logo.jpg" alt="SocialName" class="w-25"/> -->
-            </a> 
-            <a href="" class="navbar-brand">
-                logo
-                <!-- <img src="./logo.jpg" alt="SocialName" class="w-25"/> -->
-            </a> 
-            <button class="navbar-toggler navbar-toggler-icon" type="button"></button>
-        </nav>
-    </header>
+    <?php require "header.php" ?>
     <main class="container-fluid p-2 mt-5 bg-white">
         <h1 class="fw-bolder border-bottom py-3">Posts</h1>
 
