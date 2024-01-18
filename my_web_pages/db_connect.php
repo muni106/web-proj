@@ -1,6 +1,6 @@
 <?php
 
-require("db_info.php");
+require_once("db_info.php");
 $mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE);
 // Se ti stai connettendo usando il protocollo TCP/IP, invece di usare un socket UNIX, ricordati di aggiungere il parametro corrispondente al numero di porta.
 
@@ -36,7 +36,7 @@ function checkbrute($user_id, $mysqli) {
  }
 
  function login($email, $password, $mysqli) {
-    // Usando statement sql 'prepared' non sarà possibile attuare un attacco di tipo SQL injection.
+ // Usando statement sql 'prepared' non sarà possibile attuare un attacco di tipo SQL injection.
     if ($stmt = $mysqli->prepare("SELECT id, username, password, salt FROM members WHERE email = ? LIMIT 1")) { 
        $stmt->bind_param('s', $email); // esegue il bind del parametro '$email'.
        $stmt->execute(); // esegue la query appena creata.
@@ -79,6 +79,7 @@ function checkbrute($user_id, $mysqli) {
 
  function login_check($mysqli) {
     // Verifica che tutte le variabili di sessione siano impostate correttamente
+    print_r($_SESSION);
     if(isset($_SESSION['user_id'], $_SESSION['username'], $_SESSION['login_string'])) {
       $user_id = $_SESSION['user_id'];
       $login_string = $_SESSION['login_string'];
