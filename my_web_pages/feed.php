@@ -22,24 +22,21 @@
         <main class="container-fluid p-2 mt-5 bg-white">
         <h1 class="fw-bolder border-bottom py-3">Posts</h1>
     <?php
-        $stmt = $mysqli->prepare("SELECT body, posts.code, image_path, username FROM members join posts on members.id = posts.author WHERE members.id = ?");
-        $stmt->bind_param('i', $_SESSION["user_id"]);
-        $stmt->execute(); // esegue la query appena creata.
-        $stmt->store_result();
-        $stmt->bind_result($body, $code, $image_path, $username); // recupera il risultato della query e lo memorizza nelle relative variabili.
-        while ($stmt->fetch()):
+        require_once("get_feed.php");
+        $posts = get_posts_from_authors_id($_SESSION["user_id"]);
+        foreach($posts as $post):
     ?>
 
         <article class="row border-bottom py-3">
             <div class="col-2 text-center">PH</div>
             <section class="col-10 d-grid gap-2">
-                <a rel="author" href="" class="text-decoration-none text-reset fw-bold"><?php echo $username; ?></a>
+                <a rel="author" href="" class="text-decoration-none text-reset fw-bold"><?php echo $post["username"]; ?></a>
                 <p class="text-wrap">
-                    <?php echo $body; ?>
+                    <?php echo $post["body"]; ?>
                     <!-- Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium quam architecto quaerat amet obcaecati voluptatem nobis soluta magni libero ea nostrum eaque ducimus, distinctio natus adipisci modi neque blanditiis id! -->
                 </p>
                 <code class="d-block p-2 text-wrap">
-                    <?php echo $code; ?>
+                    <?php echo $post["code"]; ?>
                     <!-- print("hello world") -->
                     <!-- Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum deserunt necessitatibus, quasi a quis perspiciatis impedit, consequuntur officiis accusamus, odio minima nesciunt vitae adipisci. Eligendi deserunt sit perspiciatis itaque quam. -->
                 </code>
@@ -48,7 +45,7 @@
         </article>
     </main>
     <?php
-        endwhile;
+        endforeach;
     endif;
     ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
