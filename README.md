@@ -48,3 +48,16 @@
 
 # Design strategy
 - 
+
+# To-Decide
+- what should we bring on the hamburger
+- how to implement the notifications
+
+# Random ideas 
+- For the aside while using the social we could randomly dislay an algorithm strategy or a programming curiosity
+- Q&A Forum
+- Conference and Event listing
+- Code metrics and analitycs in the social
+
+# Mockup link 
+- https://www.figma.com/file/HNN0n3PJkGF1mj7MINm9Hp/web-proj?type=design&node-id=183-106&mode=design&t=Qg3riFJnEVMmWmJ4-0
