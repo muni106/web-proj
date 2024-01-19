@@ -30,7 +30,7 @@
         <article class="row border-bottom py-3">
             <div class="col-2 text-center">PH</div>
             <section class="col-10 d-grid gap-2">
-                <a rel="author" href="" class="text-decoration-none text-reset fw-bold"><?php echo $post["username"]; ?></a>
+                <a rel="author" href="" class="text-decoration-none text-reset fw-bold"><?php echo $post["author"]; ?></a>
                 <p class="text-wrap">
                     <?php echo $post["body"]; ?>
                     <!-- Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium quam architecto quaerat amet obcaecati voluptatem nobis soluta magni libero ea nostrum eaque ducimus, distinctio natus adipisci modi neque blanditiis id! -->
