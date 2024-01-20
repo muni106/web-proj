@@ -8,7 +8,8 @@ CREATE TABLE members (
   `username` VARCHAR(30) NOT NULL UNIQUE, 
   `email` VARCHAR(50) NOT NULL UNIQUE, 
   `password` CHAR(128) NOT NULL,
-  `salt` CHAR(128) NOT NULL
+  `salt` CHAR(128) NOT NULL,
+  `birthdate` CHAR DATE
 ) ENGINE = InnoDB;
 
 CREATE TABLE `login_attempts` (
