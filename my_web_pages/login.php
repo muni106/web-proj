@@ -16,9 +16,10 @@
     }
     ?>
     <header class="d-flex justify-content-center">
-        <img src="./logo.jpg" alt="SocialName" class="w-25"/>
+        <img src="./assets/images/logo.jpg" alt="SocialName" class="w-25"/>
     </header>
     <main>
+        <a href="landing.php"> <img src="./assets/images/left-arrow.svg" alt="left arrow" height="5%" width="5%"> </a>
         <h1 class="fw-bolder my-5">Sign in to SocialName</h1>
         <form action="process_login.php" method="post" name="login_form" class="d-grid gap-4 d-block">
             <fieldset class="form-floating">

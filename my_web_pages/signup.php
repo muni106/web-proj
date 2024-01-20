@@ -19,6 +19,7 @@
         <img src="./logo.jpg" alt="SocialName" class="w-25"/>
     </header>
     <main>
+        <a href="landing.php"> <img src="./assets/images/left-arrow.svg" alt="left arrow" height="5%" width="5%"> </a>
         <h1 class="fw-bolder my-5">Create your account</h1>
         <form action="process_signup.php" method="post" name="signup_form" class="d-grid gap-3">
             <fieldset class="form-floating">
