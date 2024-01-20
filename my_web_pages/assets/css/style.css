@@ -1,0 +1,42 @@
+header img {
+    width: 30%;
+}
+
+code {
+    background-color: lightgray;
+    color: black;
+}
+
+nav {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    text-align: center;
+    flex-grow: 1; /* Allows the logo to grow and occupy the available space */
+}
+
+.logo img {
+    max-width: 10%;
+    height: auto;
+}
+
+.hamburger-menu {
+    display: none; /* Initially hide the hamburger menu on larger screens */
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+    /* Show hamburger menu on smaller screens */
+    .hamburger-menu {
+        display: block;
+    }
+
+    /* Hide the regular navigation links on smaller screens */
+    .nav-links {
+        display: none;
+    }
+}
