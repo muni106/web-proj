@@ -36,6 +36,12 @@
                 <label for="password" class="text-secondary">Password</label>
             </fieldset>
 
+
+            <fieldset class="form-floating">
+                <input type="date" id="birthdate" name="birthdate" placeholder="" class="form-control border border-dark border-3 rounded-0" />
+                <label for="birthdate" class="text-secondary">Birthdate</label>
+            </fieldset>
+
             <input type="button" value="Sign up" onclick="formhash(this.form, this.form.password);" class="btn bg-black block-btn text-white fw-bold rounded-pill d-block mx-3" />
         </form>
     </main>
