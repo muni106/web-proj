@@ -40,7 +40,10 @@
                     <!-- print("hello world") -->
                     <!-- Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum deserunt necessitatibus, quasi a quis perspiciatis impedit, consequuntur officiis accusamus, odio minima nesciunt vitae adipisci. Eligendi deserunt sit perspiciatis itaque quam. -->
                 </code>
-                <img src="./logo.jpg" alt="" class="w-25">
+                <?php if ($post["image_path"] != NULL): ?>
+                <p>ciao</p>
+                <img src="show_image.php?image=<?php echo $post["image_path"]; ?>" alt="" class="w-25">
+                <?php endif; ?>
             </section>
         </article>
     </main>
