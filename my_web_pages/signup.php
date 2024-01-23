@@ -16,12 +16,12 @@
     }
     ?>
     <header class="d-flex justify-content-center">
-        <img src="./logo.jpg" alt="SocialName" class="w-25"/>
+        <img src="./assets/images/logo.jpg" alt="SocialName" class="w-25"/>
     </header>
     <main>
         <a href="landing.php"> <img src="./assets/images/left-arrow.svg" alt="left arrow" height="5%" width="5%"> </a>
-        <h1 class="fw-bolder my-5">Create your account</h1>
-        <form action="process_signup.php" method="post" name="signup_form" class="d-grid gap-3">
+        <h1 class="fw-bolder my-5 p-3">Create your account</h1>
+        <form action="process_signup.php" method="post" name="signup_form" class="d-grid gap-3 p-3">
             <fieldset class="form-floating">
                 <input type="text" id="username" name="username" placeholder="username" class="form-control border border-dark border-3 rounded-0" />
                 <label for="username" class="text-secondary">Username</label>
