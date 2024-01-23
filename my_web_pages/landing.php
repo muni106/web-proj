@@ -8,14 +8,20 @@
     <title>Welcome to SocialName</title>
 </head>
 <body>
-    Welcome to SocialName
-    Join now
-    <a href="signup.php">  
-        <input type="button" value="Sign up" onclick="" class="btn bg-black block-btn text-white fw-bold rounded-pill d-block mx-3" alt="sign up" height="5%" width="5%"> 
-    </a>
-    <a href="login.php">  
-        <input type="button" value="Login" onclick="" class="btn bg-black block-btn text-white fw-bold rounded-pill d-block mx-3" alt="login" height="5%" width="5%"> 
-    </a>
+    <main> 
+        <div class="p-3">
+            <h1 class="fw-bolder">Welcome to SocialName</h1>
+            <h2 class="fw-bolder">Join now</h2>
+        </div>
+        <div class="d-flex justify-content-center">
+            <a href="signup.php">  
+                <input type="button" value="Sign up" onclick="" class="btn bg-black block-btn text-white fw-bold rounded-pill d-block mx-3" alt="sign up" height="5%" width="5%"> 
+            </a>
+            <a href="login.php">  
+                <input type="button" value="Login" onclick="" class="btn bg-black block-btn text-white fw-bold rounded-pill d-block mx-3" alt="login" height="5%" width="5%"> 
+            </a>
+        <div>
+    </main>
         
 </body>
 </html>
