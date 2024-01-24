@@ -1,7 +1,6 @@
 <?php
 
-require_once("db_info.php");
-require_once("db_connect.php");
+require_once("../db/db_info.php");
 
 function get_posts_from_authors_id(int $id): Array {
     $mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE);

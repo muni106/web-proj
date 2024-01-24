@@ -8,8 +8,8 @@
     <title>Log into SocialName</title>
 </head>
 <body>
-    <script type="text/javascript" src="sha512.js"></script>
-    <script type="text/javascript" src="forms.js"></script>
+    <script type="text/javascript" src="assets/js/sha512.js"></script>
+    <script type="text/javascript" src="assets/js/forms.js"></script>
     <?php
     if(isset($_GET['error'])) { 
         echo 'Error Logging In!';
@@ -21,7 +21,7 @@
     <main>
         <a href="landing.php"> <img src="./assets/images/left-arrow.svg" alt="left arrow" height="5%" width="5%"> </a>
         <h1 class="fw-bolder my-5 p-3">Sign in to SocialName</h1>
-        <form action="process_login.php" method="post" name="login_form" class="d-grid gap-4 d-block p-3">
+        <form action="utility/process_login.php" method="post" name="login_form" class="d-grid gap-4 d-block p-3">
             <fieldset class="form-floating">
                 <input type="text" id="email" name="email" placeholder="email" class="form-control border border-dark border-3 rounded-0" />
                 <label for="email" class="text-secondary">Email</label>

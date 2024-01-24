@@ -1,6 +1,6 @@
 <?php
 
-include 'db_connect.php';
+require_once("../db/db_connect.php");
 // include 'functions.php';
 
 sec_session_start(); // usiamo la nostra funzione per avviare una sessione php sicura
