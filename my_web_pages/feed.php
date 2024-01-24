@@ -23,32 +23,12 @@
         <h1 class="fw-bolder border-bottom py-3">Posts</h1>
     <?php
         require_once("get_feed.php");
-        $posts = get_posts_from_authors_id($_SESSION["user_id"]);
-        foreach($posts as $post):
+        $posts = get_posts_from_author_id($_SESSION["user_id"]);
+        require_once("show_posts.php");
+        show_posts($posts);
     ?>
-
-        <article class="row border-bottom py-3 w-100">
-            <div class="col-2 text-center">PH</div>
-            <section class="col-10 d-grid gap-2">
-                <a rel="author" href="" class="text-decoration-none text-reset fw-bold"><?php echo $post["author"]; ?></a>
-                <p class="text-wrap text-truncate">
-                    <?php echo $post["body"]; ?>
-                    <!-- Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium quam architecto quaerat amet obcaecati voluptatem nobis soluta magni libero ea nostrum eaque ducimus, distinctio natus adipisci modi neque blanditiis id! -->
-                </p>
-                <code class="d-block p-2 text-wrap text-truncate">
-                    <?php echo $post["code"]; ?>
-                    <!-- print("hello world") -->
-                    <!-- Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum deserunt necessitatibus, quasi a quis perspiciatis impedit, consequuntur officiis accusamus, odio minima nesciunt vitae adipisci. Eligendi deserunt sit perspiciatis itaque quam. -->
-                </code>
-                <?php if ($post["image_path"] != NULL): ?>
-                <p>ciao</p>
-                <img src="show_image.php?image=<?php echo $post["image_path"]; ?>" alt="" class="w-25">
-                <?php endif; ?>
-            </section>
-        </article>
-    </main>
+        </main>
     <?php
-        endforeach;
     endif;
     ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

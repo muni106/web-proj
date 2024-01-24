@@ -3,7 +3,7 @@
 require_once("db_info.php");
 require_once("db_connect.php");
 
-function get_posts_from_authors_id(int $id): Array {
+function get_posts_from_author_id(int $id): Array {
     $mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE);
     $stmt = $mysqli->prepare(
        "SELECT body, posts.code, image_path, username 

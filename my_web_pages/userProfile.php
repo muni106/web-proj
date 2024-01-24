@@ -30,6 +30,25 @@
             <button class="btn">modify profile</button>
         </div>
     </div>
+    <?php
+    require_once("db_info.php");
+    $mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE);
+    require_once "db_connect.php";
+    sec_session_start();
+    if (login_check($mysqli)):
+    ?>
+        <main class="container p-2 mt-5 bg-white">
+        <h1 class="fw-bolder border-bottom py-3">Posts</h1>
+    <?php
+        require_once("get_feed.php");
+        $posts = get_posts_from_author_id($_SESSION["user_id"]);
+        require_once("show_posts.php");
+        show_posts($posts);
+    ?>
+        </main>
+    <?php
+    endif;
+    ?>
 </body>
 
 </html>
