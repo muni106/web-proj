@@ -1,5 +1,5 @@
 
-<header class="fixed-top">
+<header>
     <nav class="navbar navbar-expand-lg d-flex justify-content-between align-items-center p-3 bg-white">
         <a href="">
             photo
