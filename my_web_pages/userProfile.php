@@ -14,16 +14,23 @@
 
 <body>
     <?php include "headerProfile.php" ?>
+
+    <?php 
+    require_once("db_connect.php");
+    sec_session_start();
+    require_once("get_user_info.php");
+    $user_info = get_user_info($_SESSION["user_id"]);
+    ?>
     <div class="row m-2">
         <div id="profileImageContainer" class="col-3">
-            <img src="./assets/images/profilePic.png" alt="profile image" id="profileImage" >
+            <img src="./show_image.php?image=<?php echo($user_info["profile_image_path"]); ?>" alt="profile image" id="profileImage" >
         </div>
         <div id="" class="col-6">
-            <h1 id="profileNickname">Nickname</h1>
+            <h1 id="profileNickname"><?php echo($user_info["username"]) ?></h1>
             <p class="lh-sm">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate iure quas expedita necessitatibus odit? In, nemo.</p>
             <div>
-                <a class="followButton"><span class="fw-bold">following</span>: 50</a>
-                <a class="followButton"><span class="fw-bold">follower</span>: 5</a>
+                <a class="followButton"><span class="fw-bold">following</span>: <?php echo($user_info["followings"]) ?></a>
+                <a class="followButton"><span class="fw-bold">follower</span>: <?php echo($user_info["followers"]) ?></a>
             </div>
         </div>
         <div class="col-3">
