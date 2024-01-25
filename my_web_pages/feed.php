@@ -15,7 +15,7 @@
     <?php
     require_once("db_info.php");
     $mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE);
-    require_once "db_connect.php";
+    require_once("db_connect.php");
     sec_session_start();
     if (login_check($mysqli)):
     ?>

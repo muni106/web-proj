@@ -15,6 +15,6 @@ if(isset($_POST['email'], $_POST['password'])) {
    }
 } else { 
    // Le variabili corrette non sono state inviate a questa pagina dal metodo POST.
-   echo 'Invalid Request';
+   echo 'Invalid Request: missing required variables';
 }
 ?>

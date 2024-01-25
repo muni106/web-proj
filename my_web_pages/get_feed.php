@@ -30,7 +30,7 @@ function get_feed_from_user_id(int $id): Array {
     $mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE);
     $stmt = $mysqli->prepare(
        "SELECT body, posts.code, image_path, username 
-        FROM followers JOIN members ON (followers.followee_id == members.id) JOIN posts ON (members.id = posts.author)
+        FROM followers JOIN members ON (followers.followee_id = members.id) JOIN posts ON (members.id = posts.author)
         WHERE followers.id = ?"
     );
     $stmt->bind_param('i', $id);
