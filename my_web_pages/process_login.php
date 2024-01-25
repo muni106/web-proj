@@ -1,7 +1,6 @@
 <?php
 
-include 'db_connect.php';
-// include 'functions.php';
+require('db_connect.php');
 
 sec_session_start(); // usiamo la nostra funzione per avviare una sessione php sicura
 if(isset($_POST['email'], $_POST['password'])) { 

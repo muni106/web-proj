@@ -1,6 +1,6 @@
 <?php
 
-include 'functions.php';
+require('db_connect.php');
 sec_session_start();
 // Elimina tutti i valori della sessione.
 $_SESSION = array();

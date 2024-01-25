@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <?php include "headerProfile.php" ?>
+    <?php require("headerProfile.php") ?>
 
     <?php 
     require_once("db_connect.php");
