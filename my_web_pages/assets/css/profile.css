@@ -18,3 +18,10 @@ body {
     width: 10vw;
 }
 
+#profileImage {
+    vertical-align: middle;
+    width: 20vw;
+    height: 20vw;
+    border-radius: 100%;
+}
+

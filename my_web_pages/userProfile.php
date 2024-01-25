@@ -13,21 +13,21 @@
 </head>
 
 <body>
-    <?php include "header.php" ?>
+    <?php include "headerProfile.php" ?>
     <div class="row m-2">
-        <div id="profileImage" class="col-3">
-            <img src="./assets/images/logo.jpg" alt="profile image" class="w-100">
+        <div id="profileImageContainer" class="col-3">
+            <img src="./assets/images/profilePic.png" alt="profile image" id="profileImage" >
         </div>
         <div id="" class="col-6">
             <h1 id="profileNickname">Nickname</h1>
-            <p class="lh-sm">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur velit atque ex tempora reiciendis soluta nemo perspiciatis, accusamus quaerat, perferendis corporis unde beatae adipisci enim autem repellendus ipsa! Quae, facilis?</p>
+            <p class="lh-sm">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate iure quas expedita necessitatibus odit? In, nemo.</p>
             <div>
                 <a class="followButton"><span class="fw-bold">following</span>: 50</a>
                 <a class="followButton"><span class="fw-bold">follower</span>: 5</a>
             </div>
         </div>
         <div class="col-3">
-            <button class="btn ">modify profile</button>
+            <button class="btn p-0 followButton">modify profile</button>
         </div>
     </div>
     <?php
