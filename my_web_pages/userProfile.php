@@ -38,10 +38,6 @@
         </div>
     </div>
     <?php
-    require_once("db_info.php");
-    require_once "db_connect.php";
-    $mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE);
-    sec_session_start();
     if (login_check($mysqli)):
     ?>
         <main class="container p-2 mt-5 bg-white">
