@@ -23,7 +23,7 @@
         <h1 class="fw-bolder border-bottom py-3">Posts</h1>
     <?php
         require_once("get_feed.php");
-        $posts = get_posts_from_author_id($_SESSION["user_id"]);
+        $posts = get_feed_from_user_id($_SESSION["user_id"]);
         require_once("show_posts.php");
         show_posts($posts);
     ?>
