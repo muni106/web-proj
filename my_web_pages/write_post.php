@@ -16,7 +16,7 @@
         <h1 class="fw-bolder py-3 d-inline col-10">Write a post</h1>
         <form action="./process_write_post.php" method="post" enctype="multipart/form-data" class="d-grid gap-4 my-2">
             <fieldset class="row">
-                <img src="./logo.jpg" alt="authors' name" class="col-2 w-25"/>
+                <img src="./logo.png" alt="authors' name" class="col-2 w-25"/>
                 <label for="text" class="d-none">Write the main content here</label>
                 <textarea type="text" name="text" id="text" placeholder="Write something" class="border-0 align-middle col-10 d-inline w-75 p-2"></textarea>
             </fieldset>

@@ -15,7 +15,8 @@ body {
 }
 
 .logo {
-    width: 10vw;
+    width: 8vw;
+    vertical-align: middle;
 }
 
 #profileImage {

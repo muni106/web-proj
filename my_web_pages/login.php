@@ -16,7 +16,7 @@
     }
     ?>
     <header class="d-flex justify-content-center">
-        <img src="./assets/images/logo.jpg" alt="SocialName" class="w-25"/>
+        <img src="./assets/images/logo.png" alt="SocialName" class="w-25"/>
     </header>
     <main>
         <a href="landing.php"> <img src="./assets/images/left-arrow.svg" alt="left arrow" height="5%" width="5%"> </a>
