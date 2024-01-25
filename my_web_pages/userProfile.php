@@ -27,13 +27,13 @@
             </div>
         </div>
         <div class="col-3">
-            <button class="btn f">modify profile</button>
+            <button class="btn ">modify profile</button>
         </div>
     </div>
     <?php
     require_once("db_info.php");
-    $mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE);
     require_once "db_connect.php";
+    $mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE);
     sec_session_start();
     if (login_check($mysqli)):
     ?>
