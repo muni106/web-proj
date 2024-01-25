@@ -9,7 +9,8 @@ CREATE TABLE members (
   `email` VARCHAR(50) NOT NULL UNIQUE, 
   `password` CHAR(128) NOT NULL,
   `salt` CHAR(128) NOT NULL,
-  `birthdate` DATE
+  `birthdate` DATE,
+  profile_image VARCHAR(2000)
 ) ENGINE = InnoDB;
 
 CREATE TABLE `login_attempts` (

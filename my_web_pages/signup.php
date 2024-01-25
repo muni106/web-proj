@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./assets/css/signup.css">
     <title>Create your account</title>
 </head>
 <body>
@@ -21,7 +22,7 @@
     <main>
         <a href="landing.php"> <img src="./assets/images/left-arrow.svg" alt="left arrow" height="5%" width="5%"> </a>
         <h1 class="fw-bolder my-5 p-3">Create your account</h1>
-        <form action="process_signup.php" method="post" name="signup_form" class="d-grid gap-3 p-3">
+        <form action="process_signup.php" method="post" enctype="multipart/form-data" name="signup_form" class="d-grid gap-3 p-3">
             <fieldset class="form-floating">
                 <input type="text" id="username" name="username" placeholder="username" class="form-control border border-dark border-3 rounded-0" />
                 <label for="username" class="text-secondary">Username</label>
@@ -41,6 +42,11 @@
             <fieldset class="form-floating">
                 <input type="date" id="birthdate" name="birthdate" placeholder="" class="form-control border border-dark border-3 rounded-0" />
                 <label for="birthdate" class="text-secondary">Birthdate</label>
+            </fieldset>
+
+            <fieldset class="form-floating">
+                <input type="file" name="image" id="image" class="form-control border border-dark border-3 rounded-0" />
+                <label for="image" class="text-secondary">Load your profile photo</label>
             </fieldset>
 
             <input type="button" value="Sign up" onclick="formhash(this.form, this.form.password);" class="btn bg-black block-btn text-white fw-bold rounded-pill d-block mx-3" />
