@@ -38,7 +38,14 @@ CREATE TABLE posts (
 
 CREATE TABLE likes (
   `user_id` INT NOT NULL,
-  `post_id` INT NOT NULL
+  `post_id` INT NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES members(id)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  FOREIGN KEY (post_id) REFERENCES posts(id)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  PRIMARY KEY (user_id, post_id)
 ) ENGINE = InnoDB;
 
 CREATE TABLE followers (
