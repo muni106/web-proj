@@ -1,0 +1,9 @@
+#profileImage {
+    width: 8vw;
+    border-radius: 100%;
+}
+
+.textContainer {
+    display: flex;
+    justify-content: space-between;
+}

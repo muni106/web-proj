@@ -6,17 +6,28 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/chrome.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/write.css">
     <title>Write post</title>
 </head>
 <body>
+    <?php
+        require_once("db_info.php");
+        $mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE);
+        require_once("db_connect.php");
+        sec_session_start();
+        require_once("get_user_info.php");
+        $user_info = get_user_info($_SESSION["user_id"]); 
+    ?>
     <nav class="p-4">
         <button type="button" class="btn-close" aria-label="Close"></button>
     </nav>
     <main class="m-2">
         <h1 class="fw-bolder py-3 d-inline col-10">Write a post</h1>
         <form action="./process_write_post.php" method="post" enctype="multipart/form-data" class="d-grid gap-4 my-2">
-            <fieldset class="row">
-                <img src="./logo.png" alt="authors' name" class="col-2 w-25"/>
+            <fieldset class="textContainer">
+                <a href="">
+                    <img src="./show_image.php?image=<?php echo($user_info["profile_image_path"]); ?>" alt="profile image" id="profileImage" >
+                </a> 
                 <label for="text" class="d-none">Write the main content here</label>
                 <textarea type="text" name="text" id="text" placeholder="Write something" class="border-0 align-middle col-10 d-inline w-75 p-2"></textarea>
             </fieldset>

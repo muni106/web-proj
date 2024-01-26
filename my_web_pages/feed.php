@@ -14,7 +14,7 @@
         require "header.php" 
     ?>
     <?php
-    if (login_check($mysqli)):
+        if (login_check($mysqli)):
     ?>
         <main class="container p-2 mt-3 bg-white">
         <h1 class="fw-bolder border-bottom py-3">Posts</h1>
