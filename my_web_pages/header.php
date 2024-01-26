@@ -6,7 +6,7 @@
             <!-- <img src="./logo.jpg" alt="SocialName" class="w-25"/> -->
         </a> 
         <a href="" class="navbar-brand">
-            <img src="./assets/images/logo.jpg" alt="SocialName" class="logo"/> 
+            <img src="./assets/images/logo.png" alt="SocialName" class="logo"/> 
         </a> 
         <button class="navbar-toggler navbar-toggler-icon" type="button"></button>
     </nav>

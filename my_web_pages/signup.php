@@ -10,7 +10,7 @@
 </head>
 <body>
     <script type="text/javascript" src="sha512.js"></script>
-    <script type="text/javascript" src="forms.js"></script>
+    <script type="text/javascript" src="./assets/js/forms.js"></script>
     <?php
     if(isset($_GET['error'])) { 
         echo 'Error Logging In!';
