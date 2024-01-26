@@ -16,9 +16,14 @@ function show_posts(Array $posts) {
             <!-- Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum deserunt necessitatibus, quasi a quis perspiciatis impedit, consequuntur officiis accusamus, odio minima nesciunt vitae adipisci. Eligendi deserunt sit perspiciatis itaque quam. -->
         </code>
         <?php if ($post["image_path"] != NULL): ?>
-            <p>ciao</p>
             <img src="show_image.php?image=<?php echo $post["image_path"]; ?>" alt="" class="w-25">
-            <?php endif; ?>
+        <?php endif; ?>
+        <div>
+            <button type="submit" class="border-0 bg-white d-inline"><i class="bi bi-heart-fill"></i></button>
+            <button type="submit" class="border-0 bg-white d-inline"><i class="bi bi-chat-right-fill"></i></button>
+        </div>
+    </section>
+    <section>
     </section>
 </article>
 
