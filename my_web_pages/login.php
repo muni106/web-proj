@@ -31,6 +31,7 @@
                 <input type="password" id="password" name="password" placeholder="password" class="form-control border border-dark border-3 rounded-0" />
                 <label for="password" class="text-secondary">Password</label>
             </fieldset>
+
             <input type="button" value="Log in" onclick="formhash(this.form, this.form.password);" class="btn bg-black block-btn text-white fw-bold rounded-pill d-block mx-3" />
         </form>
     </main>

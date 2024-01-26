@@ -25,9 +25,9 @@ function show_posts(Array $posts) {
             <img src="show_image.php?image=<?php echo $post["image_path"]; ?>" alt="" class="w-25">
         <?php endif; ?>
         <form>
-            <label for="like" class="d-none">Click here for like this post</label>
+            <label for="like" class="d-none">Click here to like this post</label>
             <button id="like" type="button" onclick="like_post(<?php echo $post['id'] ?>);" class="border-0 bg-white bi bi-heart-fill"> <?php echo $post["likes"] ?></button>
-            <label for="comments" class="d-none">Click here go to the comments</label>
+            <label for="comments" class="d-none">Click here to go to the comments</label>
             <button id="comments" class="border-0 bg-white bi bi-chat-right-fill"> 5</button>
         </form>
     </section>

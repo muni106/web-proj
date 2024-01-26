@@ -10,6 +10,7 @@ CREATE TABLE members (
   `password` CHAR(128) NOT NULL,
   `salt` CHAR(128) NOT NULL,
   `birthdate` DATE,
+  `last_notification_check` TIMESTAMP,
   profile_image VARCHAR(2000)
 ) ENGINE = InnoDB;
 
