@@ -36,6 +36,10 @@ function checkbrute($user_id, $mysqli) {
  }
 
  function login($email, $password, $mysqli) {
+   $user_id = 0;
+   $username = "";
+   $db_password = "";
+   $salt = "";
  // Usando statement sql 'prepared' non sarà possibile attuare un attacco di tipo SQL injection.
     if ($stmt = $mysqli->prepare("SELECT id, username, password, salt FROM members WHERE email = ? LIMIT 1")) { 
        $stmt->bind_param('s', $email); // esegue il bind del parametro '$email'.
@@ -78,6 +82,8 @@ function checkbrute($user_id, $mysqli) {
  }
 
  function login_check($mysqli) {
+   $password = "";
+   
     // Verifica che tutte le variabili di sessione siano impostate correttamente
     if(isset($_SESSION['user_id'], $_SESSION['username'], $_SESSION['login_string'])) {
       $user_id = $_SESSION['user_id'];
