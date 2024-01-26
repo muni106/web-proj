@@ -34,7 +34,7 @@ function get_feed_from_user_id(int $id): Array {
     $stmt = $mysqli->prepare(
        "SELECT body, posts.code, image_path, username 
         FROM followers JOIN members ON (followers.followee_id = members.id) JOIN posts ON (members.id = posts.author)
-        WHERE followers.id = ?"
+        WHERE followers.followee_id = ?"
     );
     $stmt->bind_param('i', $id);
     $stmt->execute(); // esegue la query appena creata.
