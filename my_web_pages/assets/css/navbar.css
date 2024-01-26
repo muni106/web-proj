@@ -11,7 +11,11 @@ nav img{
     vertical-align: middle;
 }
 
-#profileImage {
+nav #profileImage {
     border-radius: 100%;
     width: 10vw;
+}
+
+#back {
+    width: 5vw;
 }
