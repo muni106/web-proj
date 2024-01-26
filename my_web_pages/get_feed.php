@@ -2,6 +2,7 @@
 
 require_once("db_info.php");
 require_once("db_connect.php");
+require_once("get_post_info.php");
 
 function get_posts_from_author_id(int $id): Array {
     $mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE);
@@ -17,10 +18,12 @@ function get_posts_from_author_id(int $id): Array {
     $result = array();
     while ($stmt->fetch()):
         array_push($result, array(
+            "id" => $id,
             "author" => $author,
             "body" => $body, 
             "code" => $code,
             "image_path" => $image_path,
+            "likes" => get_likes_of_post($id)
         ));
     endwhile;
     return $result;
@@ -40,13 +43,16 @@ function get_feed_from_user_id(int $id): Array {
     $result = array();
     while ($stmt->fetch()):
         array_push($result, array(
+            "id" => $id,
             "author" => $author,
             "body" => $body, 
             "code" => $code,
             "image_path" => $image_path,
+            "likes" => get_likes_of_post($id)
         ));
     endwhile;
     return $result;
 }
+
 
 ?>

@@ -1,5 +1,11 @@
 <?php
+require_once("get_feed.php");
+
 function show_posts(Array $posts) {
+?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="./assets/js/like_post.js"></script>
+<?php
     foreach ($posts as $post):
 ?>
 <article class="row border-bottom py-3 w-100">
@@ -17,7 +23,15 @@ function show_posts(Array $posts) {
         </code>
         <?php if ($post["image_path"] != NULL): ?>
             <img src="show_image.php?image=<?php echo $post["image_path"]; ?>" alt="" class="w-25">
-            <?php endif; ?>
+        <?php endif; ?>
+        <form>
+            <label for="like" class="d-none">Click here for like this post</label>
+            <button id="like" type="button" onclick="like_post(<?php echo $post['id'] ?>);" class="border-0 bg-white bi bi-heart-fill"> <?php echo $post["likes"] ?></button>
+            <label for="comments" class="d-none">Click here go to the comments</label>
+            <button id="comments" class="border-0 bg-white bi bi-chat-right-fill"> 5</button>
+        </form>
+    </section>
+    <section>
     </section>
 </article>
 
