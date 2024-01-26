@@ -22,8 +22,23 @@
         require_once("get_feed.php");
         $posts = get_feed_from_user_id($_SESSION["user_id"]);
         require_once("show_posts.php");
+        function get_last_notification_check(int $id): string {
+            $mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE);
+            $stmt = $mysqli->prepare(
+                "SELECT last_notification_check FROM members WHERE id = ?"
+            );
+            $stmt->bind_param('i', $id);
+            $stmt->execute(); // esegue la query appena creata.
+            $stmt->store_result();
+            $stmt->bind_result($result); // recupera il risultato della query e lo memorizza nelle relative variabili.
+            $stmt->fetch();
+            return $result;
+        };
+        $last_check = new Datetime(get_last_notification_check($_SESSION["user_id"]));
         $condition = function($value) {
-            return FALSE;
+            $post_datetime = new Datetime($value["datetime"]);
+            global $last_check;
+            return $post_datetime > $last_check;
         };
         $filtered_posts = array_filter($posts, $condition); 
         show_posts($filtered_posts);
