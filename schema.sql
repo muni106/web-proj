@@ -29,6 +29,7 @@ CREATE TABLE posts (
   `code` VARCHAR(2000) DEFAULT '',
   `image_path` VARCHAR(2000) DEFAULT '',
   `reply` INT DEFAULT NULL,
+  `datetime` DATETIME NOT NULL,
   FOREIGN KEY (author) REFERENCES members(id)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,

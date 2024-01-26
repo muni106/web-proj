@@ -22,7 +22,11 @@
         require_once("get_feed.php");
         $posts = get_feed_from_user_id($_SESSION["user_id"]);
         require_once("show_posts.php");
-        show_posts($posts);
+        $condition = function($value) {
+            return FALSE;
+        };
+        $filtered_posts = array_filter($posts, $condition); 
+        show_posts($filtered_posts);
     ?>
 
     <form action="process_notifications.php" method="post" name="clear_notifications" class="d-grid gap-4 d-block p-3">
