@@ -5,3 +5,13 @@
 .navbar-toggler-icon {
     border-color: transparent;
 }
+
+nav img{
+    width: 8vw;
+    vertical-align: middle;
+}
+
+#profileImage {
+    border-radius: 100%;
+    width: 10vw;
+}
