@@ -7,6 +7,7 @@
     $user_info = get_user_info($_SESSION["user_id"]); 
 ?>
 
+
 <header>
     <nav class="navbar navbar-expand-lg d-flex justify-content-between align-items-center p-3 bg-white">
         <a href="./userProfile.php">
@@ -15,6 +16,19 @@
         <a href="" class="navbar-brand">
             <img src="./assets/images/logo.png" alt="SocialName" class="logo"/> 
         </a> 
-        <button class="navbar-toggler navbar-toggler-icon" type="button"></button>
+        <div class="hamburger-menu">
+            <input id="menu__toggle" type="checkbox" />
+            <label class="menu__btn" for="menu__toggle">
+            <span></span>
+            </label>
+
+            <ul class="menu__box">
+            <li><a class="menu__item" href="#">Home</a></li>
+            <li><a class="menu__item" href="#">About</a></li>
+            <li><a class="menu__item" href="#">Team</a></li>
+            <li><a class="menu__item" href="#">Contact</a></li>
+            <li><a class="menu__item" href="#">Twitter</a></li>
+            </ul>
+        </div>
     </nav>
 </header>
