@@ -4,7 +4,7 @@
         <a id="goBack">
             <img src="./assets/images/back.png" alt="back" id="back"/>
         </a> 
-        <a href="index.html" class="navbar-brand ">
+        <a href="index.php" class="navbar-brand ">
             <img src="./assets/images/logo.png" alt="SocialName" class="logo"/> 
         </a> 
         <button class="navbar-toggler navbar-toggler-icon" type="button"></button>
