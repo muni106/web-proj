@@ -9,6 +9,14 @@
     <link rel="stylesheet" href="assets/css/landing.css">
 </head>
 <body>
+    <?php
+        require_once("db_connect.php");
+        sec_session_start();
+        if(login_check($mysqli)) {
+            header('Location: feed.php', true, 303);
+            die();
+        }
+    ?>
     <header class="mb-4">
         <img src="./assets/images/logo.png" alt="logo" />
     </header>
