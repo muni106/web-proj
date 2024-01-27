@@ -28,7 +28,7 @@ function show_posts(Array $posts) {
             <label for="like" class="d-none">Click here to like this post</label>
             <button id="like" type="button" onclick="like_post(<?php echo $post['id'] ?>);" class="border-0 bg-white bi bi-heart-fill"> <?php echo $post["likes"] ?></button>
             <label for="comments" class="d-none">Click here to go to the comments</label>
-            <button id="comments" class="border-0 bg-white bi bi-chat-right-fill"> 5</button>
+            <a href="show_comments_of_post.php?post_id=<?php echo $post["id"] ?>" id="comments" class="border-0 bg-white bi bi-chat-right-fill"> 5</a>
         </form>
     </section>
     <section>
