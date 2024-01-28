@@ -5,7 +5,7 @@
 require_once("db_connect.php");
 sec_session_start();
 require_once("get_user_info.php");
-$user_info = get_user_info($user_id);
+$user_info = get_user_info($_GET["user_id"]);
 ?>
 
 <head>
