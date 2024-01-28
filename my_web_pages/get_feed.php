@@ -30,6 +30,7 @@ function get_posts_from_author_id(int $id): Array {
 }
 
 function get_feed_from_user_id(int $id): Array {
+    $author = "";
     $mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE);
     $stmt = $mysqli->prepare(
        "SELECT body, posts.code, image_path, username, datetime

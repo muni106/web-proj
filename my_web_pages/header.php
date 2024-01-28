@@ -9,7 +9,7 @@
 
 
 <header>
-    <nav class="navbar navbar-expand-lg d-flex justify-content-between align-items-center p-3 bg-white">
+    <nav class="navbar navbar-expand-lg d-flex justify-content-between align-items-center p-2">
         <a href="./userProfile.php">
             <img src="./show_image.php?image=<?php echo($user_info["profile_image_path"]); ?>" alt="profile image" id="profileImage" >
         </a> 
