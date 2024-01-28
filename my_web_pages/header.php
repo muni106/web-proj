@@ -13,7 +13,7 @@
         <a href="./userProfileMe.php">
             <img src="./show_image.php?image=<?php echo($user_info["profile_image_path"]); ?>" alt="profile image" id="profileImage" >
         </a> 
-        <a href="" class="navbar-brand">
+        <a href="">
             <img src="./assets/images/logo.png" alt="SocialName" class="logo"/> 
         </a> 
         <div class="hamburger-menu">

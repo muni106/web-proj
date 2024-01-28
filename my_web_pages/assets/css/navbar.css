@@ -5,14 +5,10 @@ header {
   position: sticky;
   margin-right: 0;
   min-width: 100%;
-  height: 10vw;
   top: 0;
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-nav {
-  height: 10vw;
-}
 
 
 .navbar-toggler-icon {
@@ -20,13 +16,21 @@ nav {
 }
 
 nav img {
-  width: 10vw;
-  vertical-align: middle;
+  width: 5vw;
+  margin-bottom: 5vw;
+}
+
+nav a {
+  height: 5vw;
+}
+
+nav div {
+  height: 5vw;
 }
 
 nav #profileImage {
   border-radius: 100%;
-  width: 10vw;
+  width: 8vw;
 }
 
 #back {
