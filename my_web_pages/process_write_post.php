@@ -12,7 +12,7 @@ if (login_check($mysqli)) {
     print_r($_FILES);
     
     $user_id = $_SESSION['user_id'];
-    $text = preg_replace("/[^a-zA-Z0-9_\-]+/", "", $_POST["text"]);
+    $text = $_POST["text"];
     $code = $_POST["code"];
     $image = $_FILES["image"];
     $current_datetime = $_POST["current_datetime"];
@@ -26,6 +26,8 @@ if (login_check($mysqli)) {
     $stmt->bind_param("issss", $_SESSION["user_id"], $text, $code, $server_image_filename, $current_datetime);
     if (!$stmt->execute()) {
         echo "publish failed";
+    } else {
+        header('Location: feed.php', true, 303);
+        die();
     }
 }
-?>
