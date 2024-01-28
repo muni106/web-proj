@@ -23,9 +23,9 @@
             </label>
 
             <ul class="menu__box">
-            <li><a class="menu__item" href="#">Home</a></li>
-            <li><a class="menu__item" href="#">About</a></li>
-            <li><a class="menu__item" href="#">Team</a></li>
+            <li><a class="menu__item" href="index.php">Home</a></li>
+            <li><a class="menu__item" href="userProfileMe.php">Profile</a></li>
+            <li><a class="menu__item" href="write_post.php">Write</a></li>
             <li><a class="menu__item" href="#">Contact</a></li>
             <li><a class="menu__item" href="#">Twitter</a></li>
             </ul>
