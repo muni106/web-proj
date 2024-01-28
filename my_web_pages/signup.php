@@ -50,6 +50,11 @@
                 <label for="image" class="text-secondary">Load your profile photo</label>
             </fieldset>
 
+            <fieldset class="form-floating">
+                <input type="text" id="bio" name="bio" placeholder="" class="form-control border border-dark border-3 rounded-0" />
+                <label for="bio" class="text-secondary">Bio</label>
+            </fieldset>
+
             <input type="button" value="Sign up" onclick="formhash(this.form, this.form.password);" class="btn bg-black block-btn text-white fw-bold rounded-pill d-block mx-3" />
         </form>
     </main>

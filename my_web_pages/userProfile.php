@@ -30,7 +30,7 @@ $user_info = get_user_info($_GET["user_id"]);
         </div>
         <div id="" class="col-6">
             <h1 id="profileNickname"><?php echo ($user_info["username"]) ?></h1>
-            <p class="lh-sm">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate iure quas expedita necessitatibus odit? In, nemo.</p>
+            <p class="lh-sm"><?php ?></p>
             <div>
                 <a class="followButton"><span class="fw-bold">following</span>: <?php echo ($user_info["followings"]) ?></a>
                 <a class="followButton"><span class="fw-bold">follower</span>: <?php echo ($user_info["followers"]) ?></a>

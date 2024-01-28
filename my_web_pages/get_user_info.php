@@ -5,14 +5,14 @@ require_once("db_info.php");
 function get_user_info(int $user_id): Array {
     $mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE);
     $stmt = $mysqli->prepare(
-    "SELECT username, email, birthdate, profile_image
+    "SELECT username, email, birthdate, profile_image, bio
     FROM members
     WHERE id = ?
     ");
     $stmt->bind_param("i", $user_id);
     $stmt->execute(); // esegue la query appena creata.
     $stmt->store_result();
-    $stmt->bind_result($username, $email, $birthdate, $profile_image_path);
+    $stmt->bind_result($username, $email, $birthdate, $profile_image_path, $bio);
     $stmt->fetch();
 
     return Array(
@@ -22,7 +22,8 @@ function get_user_info(int $user_id): Array {
         "birthdate" => $birthdate,
         "profile_image_path" => $profile_image_path,
         "followers" => get_number_of_followers($user_id),
-        "followings" => get_number_of_followings($user_id)
+        "followings" => get_number_of_followings($user_id),
+        "bio" => $bio
     );
 }
 

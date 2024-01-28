@@ -30,7 +30,7 @@
         </div>
         <div id="" class="col-6">
             <h1 id="profileNickname"><?php echo($user_info["username"]) ?></h1>
-            <p class="lh-sm">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate iure quas expedita necessitatibus odit? In, nemo.</p>
+            <p class="lh-sm"><?php echo($user_info["bio"]) ?></p>
             <h2><?php echo($user_info["id"]) ?></h2>
             <div>
                 <a class="followButton"><span class="fw-bold">following</span>: <?php echo($user_info["followings"]) ?></a>

@@ -11,7 +11,8 @@ CREATE TABLE members (
   `salt` CHAR(128) NOT NULL,
   `birthdate` DATE,
   `last_notification_check` TIMESTAMP,
-  profile_image VARCHAR(2000)
+  profile_image VARCHAR(2000),
+  bio VARCHAR(6000) DEFAULT ""
 ) ENGINE = InnoDB;
 
 CREATE TABLE `login_attempts` (
