@@ -32,12 +32,12 @@ $user_info = get_user_info($_GET["user_id"]);
             <h1 id="profileNickname"><?php echo ($user_info["username"]) ?></h1>
             <p class="lh-sm"><?php ?></p>
             <div>
-                <a class="followButton"><span class="fw-bold">following</span>: <?php echo ($user_info["followings"]) ?></a>
-                <a class="followButton"><span class="fw-bold">follower</span>: <?php echo ($user_info["followers"]) ?></a>
+                <a class="stats"><span class="fw-bold">following</span>: <?php echo ($user_info["followings"]) ?></a>
+                <a class="stats"><span class="fw-bold">follower</span>: <?php echo ($user_info["followers"]) ?></a>
             </div>
         </div>
         <div class="col-3">
-            <button class="btn p-0 followButton">follow</button>
+            <button id="profileBtn" class="btn rounded-pill">follow</button>
         </div>
     </div>
     <?php

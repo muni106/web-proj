@@ -29,7 +29,7 @@
                     <img src="show_image.php?image=<?php echo($user_info["profile_image_path"]); ?>" alt="profile image" id="profileImage" >
                 </a> 
                 <label for="text" class="d-none">Write the main content here</label>
-                <textarea type="text" name="text" id="text" placeholder="Write something" class="border-0 align-middle col-10 d-inline w-75 p-2"></textarea>
+                <textarea type="text" name="text" id="text" id="postDescription" placeholder="Write something" class="border-0 align-middle col-10 d-inline w-75 p-2"></textarea>
             </fieldset>
             <fieldset class="d-flex justify-content-center">
                 <label for="code" class="d-none">Insert your code here:</label>

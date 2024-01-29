@@ -1,24 +1,28 @@
 body {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .btn {
-    border-color: black;
-    background-color: lightgray;
+  border-color: black;
+  background-color: lightgray;
 }
 
-.followButton {
-    color: black;
-    text-decoration: none;
-    font-size: x-small;
+.stats {
+  color: lightgray;
+  text-decoration: none;
+  font-size: x-small;
 }
-
 
 #profileImage {
-    vertical-align: middle;
-    width: 20vw;
-    height: 20vw;
-    border-radius: 100%;
+  vertical-align: middle;
+  width: 20vw;
+  height: 20vw;
+  border-radius: 100%;
 }
 
+#profileBtn {
+  color: rgba(43, 43, 43, 255);
+  padding: 0vw 4vw;
+  border-color: rgba(49, 51, 53, 255);
+}
