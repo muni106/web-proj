@@ -5,5 +5,6 @@ RUN chmod +x /init-schema.sh
 
 RUN mkdir /images
 RUN chmod -R a+rwX /images/
+COPY ./defaultProfileImage.png /images/defaultProfileImage.png 
 
 ENTRYPOINT  ["/init-schema.sh"]
