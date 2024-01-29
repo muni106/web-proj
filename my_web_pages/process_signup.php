@@ -16,7 +16,7 @@ if ($image["error"] == 0) { // if the image was loaded correctly
    $server_image_filename = "/images/".pathinfo($image["tmp_name"])["basename"];
    move_uploaded_file($image["tmp_name"], $server_image_filename);
 } else {
-   $server_image_filename = NULL;
+   $server_image_filename = "/images/defaultProfileImage.png";
 }
 
 $bio = $_POST["bio"];
