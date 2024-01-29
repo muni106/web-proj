@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="assets/css/chrome.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/navbar.css">
-    <title>Notifications</title>
+    <title>Saved posts</title>
 </head>
 <body>
     <?php 
@@ -18,27 +18,27 @@
         if (login_check($mysqli)):
     ?>
         <main class="container p-2 mt-3 bg-white">
-        <h1 class="fw-bolder border-bottom py-3">Notifications</h1>
+        <h1 class="fw-bolder border-bottom py-3">Saved posts</h1>
     <?php
         require_once("get_feed.php");
-        $posts = get_feed_from_user_id($_SESSION["user_id"]);
-        require_once("show_posts.php")
-        $last_check = new Datetime(get_last_notification_check($_SESSION["user_id"]));
+        $posts = get_all_feed();
+        require_once("show_posts.php");
         $condition = function($value) {
-            $post_id = $value["post_id"];
+            $mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE);
+            $post_id = $value["id"];
             $author = $value["author"];
+            if ($stmt=$mysqli->prepare("SELECT post_id FROM saved_posts WHERE post_id = ?  AND USER_ID = ?")) {
+                $stmt->bind_param('is', $post_id, $author);
+                $stmt->execute(); 
+                $stmt->store_result();
+                $stmt->bind_result($result);
+            }
+            return !is_null($result);
         };
         $filtered_posts = array_filter($posts, $condition); 
         show_posts($filtered_posts);
     ?>
 
-    <form action="process_notifications.php" method="post" name="clear_notifications" class="d-grid gap-4 d-block p-3">
-        <fieldset>
-            <input type="hidden" name="current_datetime" value="<?php echo date('Y-m-d H:i:s'); ?>">
-        </fieldset>
-
-        <input type="submit" value="Clear notifications" onclick="" class="btn bg-black block-btn text-white fw-bold rounded-pill d-block mx-3" />
-    </form>
         </main>
     <?php
     endif;

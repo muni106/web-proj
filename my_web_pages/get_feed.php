@@ -56,5 +56,28 @@ function get_feed_from_user_id(int $id): Array {
     return $result;
 }
 
+function get_all_feed(): Array {
+    $mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE);
+    $stmt = $mysqli->prepare(
+       "SELECT body, code, image_path, username, datetime, members.id
+        FROM members JOIN posts ON (members.id = posts.author);"
+    );
+    $stmt->execute(); // esegue la query appena creata.
+    $stmt->store_result();
+    $stmt->bind_result($body, $code, $image_path, $author, $datetime, $id);
+    $result = array();
+    while ($stmt->fetch()):
+        array_push($result, array(
+            "id" => $id,
+            "author" => $author,
+            "body" => $body, 
+            "code" => $code,
+            "image_path" => $image_path,
+            "likes" => get_likes_of_post($id),
+            "datetime" => $datetime
+        ));
+    endwhile;
+    return $result;
+}
 
 ?>
