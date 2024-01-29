@@ -9,7 +9,7 @@ function follow_user_by_id($followed_id) {
     if (login_check($mysqli)) {
         $follower_id = $_SESSION['user_id'];
         $stmt = $mysqli->prepare(
-            "INSERT INTO followers VALUES (?, ?)"
+            "INSERT IGNORE INTO followers VALUES (?, ?)"
         );
         $stmt->bind_param("ii", $follower_id, $followed_id);
         return $stmt->execute();
