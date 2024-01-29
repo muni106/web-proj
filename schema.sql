@@ -67,4 +67,6 @@ CREATE TABLE saved_posts(
   `post_id` INT NOT NULL,
   PRIMARY KEY(user_id, post_id)
   
+    ON UPDATE NO ACTION,
+  PRIMARY KEY (follower_id, followee_id)
 ) ENGINE = InnoDB;

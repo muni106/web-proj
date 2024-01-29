@@ -22,6 +22,8 @@ $user_info = get_user_info($_GET["user_id"]);
 </head>
 
 <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./assets/js/follow_user.js"></script>
     <?php require("headerProfile.php") ?>
 
     <div class="row m-2">
@@ -33,12 +35,13 @@ $user_info = get_user_info($_GET["user_id"]);
             <p class="lh-sm"><?php ?></p>
             <div>
                 <a class="followButton"><span class="fw-bold">following</span>: <?php echo ($user_info["followings"]) ?></a>
-                <a class="followButton"><span class="fw-bold">follower</span>: <?php echo ($user_info["followers"]) ?></a>
+                <a class="followButton"><span class="fw-bold">follower</span>: <span id="num_followers"><?php echo ($user_info["followers"]) ?></span></a>
             </div>
         </div>
-        <div class="col-3">
-            <button class="btn p-0 followButton">follow</button>
-        </div>
+        <form class="col-3">
+            <label for="follow" class="d-none">Click here to follow this user</label>
+            <button id="follow" type="button" onclick="follow_user(<?php echo $user_info['id'] ?>)" class="btn p-0 followButton">follow</button>
+        </form>
     </div>
     <?php
     if (login_check($mysqli)) :
