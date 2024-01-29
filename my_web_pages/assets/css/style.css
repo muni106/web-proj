@@ -1,22 +1,32 @@
 * {
-    color: lightgrey;
+  color: lightgrey;
 }
+
 body {
-    background-color: rgba(43,43,43,255);
+  background-color: rgba(43, 43, 43, 255);
 }
+
 html {
-    background-color: rgba(43,43,43,255);
-    width: 100%;
+  background-color: rgba(43, 43, 43, 255);
+  width: 100%;
 }
+
 header img {
-    width: 30%;
+  width: 30%;
 }
 
 code {
-    background-color: lightgray;
-    color: black;
+  background-color: lightgray;
+  color: black;
 }
 
 main {
-    background-color: rgba(43,43,43,255);
+  background-color: rgba(43, 43, 43, 255);
+}
+
+.btn {
+  background-color: rgba(181,110,34,255);
+  border-color: lightgray;
+  color: lightgray;
+
 }

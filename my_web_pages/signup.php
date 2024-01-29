@@ -55,7 +55,7 @@
                 <label for="bio" class="text-secondary">Bio</label>
             </fieldset>
 
-            <input type="button" value="Sign up" onclick="formhash(this.form, this.form.password);" class="btn bg-black block-btn text-white fw-bold rounded-pill d-block mx-3" />
+            <input type="button" value="Sign up" onclick="formhash(this.form, this.form.password);" class="btn block-btn text-white fw-bold rounded-pill d-block mx-3" />
         </form>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

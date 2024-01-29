@@ -25,11 +25,11 @@
         <h1 class="fw-bolder display-1 mb-5">Welcome to SocialName</h1>
         <section class="mb-5 ">
             <h2 class="fw-bold mb-3">Join now</h2>
-            <a href="signup.php" class="btn d-flex justify-content-center bg-black text-white fw-bold rounded-pill mx-3">Sign up</a>
+            <a href="signup.php" class="btn d-flex justify-content-center text-white fw-bold rounded-pill mx-3">Sign up</a>
         </section>
         <section class="mb-5">
             <h2 class="fw-bold mb-3">Already have an account?</h2>
-            <a href="login.php" class="btn d-flex justify-content-center bg-black text-white fw-bold rounded-pill mx-3">Sign in</a>
+            <a href="login.php" class="btn d-flex justify-content-center text-white fw-bold rounded-pill mx-3">Sign in</a>
         </section>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

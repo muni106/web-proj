@@ -50,7 +50,7 @@
             <input type="hidden" name="current_datetime" value="<?php echo date('Y-m-d H:i:s'); ?>">
         </fieldset>
 
-        <input type="submit" value="Clear notifications" onclick="" class="btn bg-black block-btn text-white fw-bold rounded-pill d-block mx-3" />
+        <input type="submit" value="Clear notifications" onclick="" class="btn block-btn text-white fw-bold rounded-pill d-block mx-3" />
     </form>
         </main>
     <?php
