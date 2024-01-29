@@ -59,7 +59,8 @@ CREATE TABLE followers (
     ON UPDATE NO ACTION,
   FOREIGN KEY (followee_id) REFERENCES members(id)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION
+    ON UPDATE NO ACTION,
+  PRIMARY KEY (follower_id, followee_id)
 ) ENGINE = InnoDB;
 
 CREATE TABLE saved_posts(
