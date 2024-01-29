@@ -61,3 +61,10 @@ CREATE TABLE followers (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
 ) ENGINE = InnoDB;
+
+CREATE TABLE saved_posts(
+  `user_id` INT NOT NULL,
+  `post_id` INT NOT NULL,
+  PRIMARY KEY(user_id, post_id)
+  
+) ENGINE = InnoDB;
