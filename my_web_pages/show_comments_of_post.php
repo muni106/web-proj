@@ -22,6 +22,7 @@
     require_once("db_connect.php");
     sec_session_start();
     $post_id = $_GET["post_id"];
+    echo($post_id);
     require_once("get_post_info.php");
     $post = get_post_info($post_id);
     require_once("get_user_info.php");
