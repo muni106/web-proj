@@ -30,3 +30,8 @@ main {
   color: lightgray;
 
 }
+
+img {
+  object-fit: contain;
+  align-self: self-start;
+}

@@ -1,5 +1,6 @@
 <?php
 require_once("get_feed.php");
+require_once("get_user_info.php");
 
 function show_posts(Array $posts) {
 ?>
@@ -7,11 +8,12 @@ function show_posts(Array $posts) {
 <script src="./assets/js/like_post.js"></script>
 <?php
     foreach ($posts as $post):
+        $author = get_user_info($post["author"]);
 ?>
 <article class="row border-bottom py-3 w-100">
-    <div class="col-2 text-center">PH</div>
+    <img src="show_image.php?image=<?php echo $author["profile_image_path"] ?>" alt="" class="col-2 img-fluid p-0" />
     <section class="col-10 d-grid gap-2">
-        <a rel="author" href="" class="text-decoration-none text-reset fw-bold"><?php echo $post["author"]; ?></a>
+        <a rel="author" href="" class="text-decoration-none text-reset fw-bold"><?php echo $author["username"]; ?></a>
         <p class="text-wrap text-truncate">
             <?php echo $post["body"]; ?>
             <!-- Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium quam architecto quaerat amet obcaecati voluptatem nobis soluta magni libero ea nostrum eaque ducimus, distinctio natus adipisci modi neque blanditiis id! -->
@@ -22,7 +24,7 @@ function show_posts(Array $posts) {
             <!-- Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum deserunt necessitatibus, quasi a quis perspiciatis impedit, consequuntur officiis accusamus, odio minima nesciunt vitae adipisci. Eligendi deserunt sit perspiciatis itaque quam. -->
         </code>
         <?php if ($post["image_path"] != NULL): ?>
-            <img src="show_image.php?image=<?php echo $post["image_path"]; ?>" alt="" class="w-25">
+            <img src="show_image.php?image=<?php echo $post["image_path"]; ?>" alt="" class="w-100">
         <?php endif; ?>
         <form>
             <label for="like" class="d-none">Click here to like this post</label>

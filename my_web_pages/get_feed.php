@@ -7,7 +7,7 @@ require_once("get_post_info.php");
 function get_posts_from_author_id(int $id): Array {
     $mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE);
     $stmt = $mysqli->prepare(
-       "SELECT body, posts.code, image_path, username 
+       "SELECT body, posts.code, image_path, posts.author
         FROM members join posts on members.id = posts.author 
         WHERE members.id = ?"
     );
