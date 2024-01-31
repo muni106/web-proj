@@ -66,3 +66,15 @@ function get_reply_posts($father_id) {
     }
     return $posts;
 }
+
+function get_comments_number(int $post_id): int {
+    $mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE);
+    $count_stmt = $mysqli->prepare(
+        "SELECT COUNT(*) FROM posts WHERE reply = ?
+    ");
+    $count_stmt->bind_param("i", $post_id);
+    $count_stmt->execute();
+    $count_stmt->bind_result($count);
+    $count_stmt->fetch();
+    return $count;
+}

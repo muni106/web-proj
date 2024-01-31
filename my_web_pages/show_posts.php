@@ -30,8 +30,16 @@ function show_posts(Array $posts) {
             <label for="like" class="d-none">Click here to like this post</label>
             <button id="like" type="button" onclick="like_post(<?php echo $post['id'] ?>);" class="border-0 bi bi-heart-fill"> <?php echo $post["likes"] ?></button>
             <label for="comments" class="d-none">Click here to go to the comments</label>
-            <a href="show_comments_of_post.php?post_id=<?php echo $post["id"] ?>" id="comments" class="border-0 bi bi-chat-right-fill"> 5</a>
+            <a href="show_comments_of_post.php?post_id=<?php echo $post["id"] ?>" id="comments" class="border-0 bi bi-chat-right-fill">
+                <?php echo get_comments_number($post["id"]); ?>
+            </a>
         </form>
+        <!-- <form>
+            <label for="like" class="d-none">Click here to like this post</label>
+            <button id="like" type="button" onclick="like_post(<?php echo $post['id'] ?>);" class="border-0 bi bi-heart-fill"> <?php echo $post["likes"] ?></button>
+            <label for="comments" class="d-none">Click here to go to the comments</label>
+            <a href="show_comments_of_post.php?post_id=<?php echo $post["id"] ?>" id="comments" class="border-0 bi bi-chat-right-fill" <?php echo get_comments_number($post["id"]) ?> >
+        </form> -->
         <form action="process_save_post.php" method="post">
             <input type="hidden" name="post_id" value="<?php echo $post["id"]; ?>">
             <input type="hidden" name="username" value="<?php echo $post["author"]; ?>">
