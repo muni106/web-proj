@@ -16,14 +16,20 @@ if (login_check($mysqli)) {
     $code = $_POST["code"];
     $image = $_FILES["image"];
     $current_datetime = $_POST["current_datetime"];
+    print_r($_POST["reply"]);
+    if (isset($_POST["reply"])) {
+        $reply = $_POST["reply"];
+    } else {
+        $reply = NULL;
+    };
     if ($image["error"] == 0) { // if the image was loaded correctly
         $server_image_filename = "/images/".pathinfo($image["tmp_name"])["basename"];
         move_uploaded_file($image["tmp_name"], $server_image_filename);
     } else {
         $server_image_filename = NULL;
     }
-    $stmt = $mysqli->prepare("INSERT INTO posts (author, body, code, image_path, datetime) VALUES (?, ?, ?, ?, ?) ");
-    $stmt->bind_param("issss", $_SESSION["user_id"], $text, $code, $server_image_filename, $current_datetime);
+    $stmt = $mysqli->prepare("INSERT INTO posts (author, body, code, image_path, datetime, reply) VALUES (?, ?, ?, ?, ?, ?) ");
+    $stmt->bind_param("isssss", $_SESSION["user_id"], $text, $code, $server_image_filename, $current_datetime, $reply);
     if (!$stmt->execute()) {
         echo "publish failed";
     } else {

@@ -37,6 +37,10 @@ function show_posts(Array $posts) {
             <input type="hidden" name="username" value="<?php echo $post["author"]; ?>">
             <input type="submit" value="save post" id="save_post">
         </form>
+        <form action="write_post.php" method="get">
+            <input type="hidden" name="reply" value="<?php echo $post["id"]; ?>">
+            <input type="submit" value="reply to post" id="reply_post">
+        </form>
     </section>
     <section>
     </section>
