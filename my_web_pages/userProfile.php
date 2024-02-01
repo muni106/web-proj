@@ -2,8 +2,6 @@
 <html lang="en">
 
 <?php
-require_once("db_connect.php");
-sec_session_start();
 require_once("get_user_info.php");
 $user_info = get_user_info($_GET["user_id"]);
 ?>
@@ -24,47 +22,55 @@ $user_info = get_user_info($_GET["user_id"]);
 <body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="./assets/js/follow_user.js"></script>
-    <?php 
-    require("headerProfile.php");
-    require_once("db_connect.php");
-    if (login_check($mysqli)) :
-    ?>
 
-    <div class="row m-2">
-        <div id="profileImageContainer" class="col-3">
-            <img src="show_image.php?image=<?php echo ($user_info["profile_image_path"]); ?>" alt="profile image" id="profileImage">
-        </div>
-        <div id="" class="col-6">
-            <h1 id="profileNickname"><?php echo ($user_info["username"]) ?></h1>
-            <p class="lh-sm"><?php echo ($user_info["bio"]) ?></p>
-            <div>
-                <a class="stats"><span class="fw-bold">following</span>: <?php echo ($user_info["followings"]) ?></a>
-                <a class="stats"><span class="fw-bold">followers</span>: <span id="num_followers"><?php echo ($user_info["followers"]) ?></span></a>
+    <?php
+    require("headerProfile.php");
+    require("db_connect.php");
+    $user_id = $_GET["user_id"];
+    if (user_exists($user_id)):
+    ?>
+        <div class="row m-2">
+            <div id="profileImageContainer" class="col-3">
+                <img src="show_image.php?image=<?php echo ($user_info["profile_image_path"]); ?>" alt="profile image" id="profileImage">
             </div>
-        </div>
-        <?php if ($user_info["id"] == $_SESSION["user_id"]): ?>
-            <div class="col-3">
-                <a id="profileBtn" href="./signup.php?update" class="btn p-0 followButton">Update profile</a>
+            <div id="" class="col-6">
+                <h1 id="profileNickname"><?php echo ($user_info["username"]) ?></h1>
+                <p class="lh-sm"><?php echo ($user_info["bio"]) ?></p>
+                <div>
+                    <a class="stats"><span class="fw-bold">following</span>: <?php echo ($user_info["followings"]) ?></a>
+                    <a class="stats"><span class="fw-bold">followers</span>: <span id="num_followers"><?php echo ($user_info["followers"]) ?></span></a>
+                </div>
             </div>
-        <?php else: ?>
-            <form class="col-3">
-                <label for="profileBtn" class="d-none">Click here to follow this user</label>
-                <button id="profileBtn" type="button" onclick="follow_user(<?php echo $user_info['id'] ?>)" class="btn p-0 followButton">Follow</button>
-            </form>
-        <?php endif; ?>
-    </div>
-    <main class="container p-2 mt-5">
-        <h1 class="fw-bolder border-bottom py-3">Posts</h1>
+            <?php
+            sec_session_start();
+            if ($user_info["id"] == $_SESSION["user_id"]): ?>
+                <div class="col-3">
+                    <a id="profileBtn" href="./signup.php?update" class="btn p-0 followButton">Update profile</a>
+                </div>
+            <?php else: ?>
+                <form class="col-3">
+                    <label for="profileBtn" class="d-none">Click here to follow this user</label>
+                    <button id="profileBtn" type="button" onclick="follow_user(<?php echo $user_info['id'] ?>)" class="btn p-0 followButton">Follow</button>
+                </form>
+            <?php endif; ?>
+        </div>
+        <main class="container p-2 mt-5">
+            <h1 class="fw-bolder border-bottom py-3">Posts</h1>
+            <?php
+            require_once("get_feed.php");
+            $posts = get_posts_from_author_id($_GET["user_id"]);
+            require_once("show_posts.php");
+            show_posts($posts);
+            ?>
+        </main>
         <?php
-        require_once("get_feed.php");
-        $posts = get_posts_from_author_id($_GET["user_id"]);
-        require_once("show_posts.php");
-        show_posts($posts);
-        ?>
-    </main>
+    else: 
+    ?>
+        <p> User does not exist </p>
     <?php
     endif;
     ?>
+
 </body>
 
 </html>

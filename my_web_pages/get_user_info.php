@@ -57,5 +57,19 @@ function get_number_of_followings(int $user_id): int {
     return $count;
 }
 
-?>
+function user_exists(int $user_id): bool {
+    $mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE);
+    if ($stmt = $mysqli->prepare("SELECT COUNT(*) FROM members WHERE id = ? ")) {
+        $stmt->bind_param("i", $user_id);
+        $stmt->execute();
+        $stmt->store_result();
+        $stmt->bind_result($count);
+        $stmt->fetch();
+        $cond = (bool) $count > 0;
+        return $count > 0;
+    } else {
+        return FALSE;
+    }
+}
 
+?>
