@@ -42,7 +42,13 @@
             <input type="hidden" name="current_datetime" value="<?php echo date('Y-m-d H:i:s'); ?>">
             <fieldset class="d-flex justify-content-center">
                 <label for="publish" class="d-none">Publish this post</label>
-                <input type="hidden" name="reply" value='<?php echo $_GET["reply"] ?>'>
+                <?php
+                if (isset($_GET["reply"])):
+                ?>
+                    <input type="hidden" name="reply" value='<?php echo $_GET["reply"] ?>'>
+                <?php
+                endif;
+                ?>
                 <input type="submit" value="Publish" id="publish" class="btn block-btn text-white fw-bold rounded-pill d-block w-75"/>
             </fieldset>
         </form>
