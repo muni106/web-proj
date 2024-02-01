@@ -66,8 +66,5 @@ CREATE TABLE followers (
 CREATE TABLE saved_posts(
   `user_id` INT NOT NULL,
   `post_id` INT NOT NULL,
-  PRIMARY KEY(user_id, post_id)
-  
-    ON UPDATE NO ACTION,
-  PRIMARY KEY (follower_id, followee_id)
+  PRIMARY KEY(user_id, post_id)  
 ) ENGINE = InnoDB;

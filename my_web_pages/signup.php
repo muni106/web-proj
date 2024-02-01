@@ -18,6 +18,8 @@
     if (isset($_GET['error'])) {
         echo 'Error Logging In!';
     }
+    require_once("db_connect.php");
+    sec_session_start();
     $is_update = isset($_GET["update"]) && isset($_SESSION["user_id"]);
     ?>
     <header class="d-flex justify-content-center">
@@ -32,10 +34,10 @@
         }
         ?>
         <?php if ($is_update) : ?>
-            <form action="process_signup.php" method="post" enctype="multipart/form-data" name="signup_form" class="d-grid gap-3 p-3">
-            <?php else : ?>
-                <form action="process_signup.php?update" method="post" enctype="multipart/form-data" name="signup_form" class="d-grid gap-3 p-3">
-                <?php endif; ?>
+            <form action="process_signup.php?update" method="post" enctype="multipart/form-data" name="signup_form" class="d-grid gap-3 p-3">
+                <?php else : ?>
+                    <form action="process_signup.php" method="post" enctype="multipart/form-data" name="signup_form" class="d-grid gap-3 p-3">
+            <?php endif; ?>
                 <fieldset class="form-floating">
                     <input type="text" id="username" name="username" placeholder="username" class="form-control border border-dark border-3 rounded-0" />
                     <label for="username" class="text-secondary">Username</label>
