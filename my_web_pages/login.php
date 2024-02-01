@@ -12,10 +12,10 @@
     <script type="text/javascript" src="./assets/js/sha512.js"></script>
     <script type="text/javascript" src="./assets/js/forms.js"></script>
     <header class="d-flex justify-content-center">
-        <img src="./assets/images/logo.png" alt="SocialName" class="w-25"/>
+        <img src="./assets/images/logo.png" alt="SocialName" />
     </header>
     <main>
-        <a href="index.php"> <img src="./assets/images/left-arrow.svg" alt="left arrow" height="5%" width="5%"> </a>
+        <a href="index.php"> <img src="./assets/images/back.png" alt="left arrow" height="5%" width="5%"> </a>
         <h1 class="fw-bolder my-5 p-3">Sign in to SocialName</h1>
         <?php
         if(isset($_GET['error'])) { 

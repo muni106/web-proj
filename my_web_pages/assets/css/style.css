@@ -11,8 +11,10 @@ html {
   width: 100%;
 }
 
-header img {
-  width: 30%;
+@media only screen and (max-width: 760px) {
+  header img {
+    width: 30%;
+  }
 }
 
 code {
@@ -25,13 +27,33 @@ main {
 }
 
 .btn {
-  background-color: rgba(181,110,34,255);
+  background-color: rgba(181, 110, 34, 255);
   border-color: lightgray;
   color: lightgray;
-
 }
 
 img {
   object-fit: contain;
   align-self: self-start;
+}
+
+@media only screen and (min-width: 760px) {
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4vw;
+  }
+
+  header {
+    width: 50%;
+  }
+
+  header img {
+    width: 44vw;
+  }
+
+  .btn {
+    width: 30vw;
+  }
 }
