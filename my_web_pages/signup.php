@@ -12,6 +12,12 @@
 <body>
     <script type="text/javascript" src="./assets/js/sha512.js"></script>
     <script type="text/javascript" src="./assets/js/forms.js"></script>
+    <?php
+    if(isset($_GET['error'])) { 
+        echo 'Error Logging In!';
+    }
+    $is_update = isset($_GET["update"]) && isset($_SESSION["user_id"]);
+    ?>
     <header class="d-flex justify-content-center">
         <img src="assets/images/logo.png" alt="SocialName" class="w-25"/>
     </header>
@@ -23,7 +29,11 @@
             echo '<h4 class="fw-bolder my-5 p-3">Error signing up!</h4>';
         }
         ?>
+        <?php if($is_update): ?>
         <form action="process_signup.php" method="post" enctype="multipart/form-data" name="signup_form" class="d-grid gap-3 p-3">
+        <?php else: ?>
+        <form action="process_signup.php?update" method="post" enctype="multipart/form-data" name="signup_form" class="d-grid gap-3 p-3">
+        <?php endif; ?>
             <fieldset class="form-floating">
                 <input type="text" id="username" name="username" placeholder="username" class="form-control border border-dark border-3 rounded-0" />
                 <label for="username" class="text-secondary">Username</label>
@@ -54,8 +64,14 @@
                 <input type="text" id="bio" name="bio" placeholder="" class="form-control border border-dark border-3 rounded-0" />
                 <label for="bio" class="text-secondary">Bio</label>
             </fieldset>
-
-            <input type="button" value="Sign up" onclick="formhash(this.form, this.form.password);" class="btn block-btn text-white fw-bold rounded-pill d-block mx-3" />
+            <?php 
+                if ($is_update) {
+                    $button_text = "Update profile";
+                } else {
+                    $button_text =  "Sign up";
+                }
+            ?>
+            <input type="button" value="<?php echo $button_text; ?>" onclick="formhash(this.form, this.form.password);" class="btn block-btn text-white fw-bold rounded-pill d-block mx-3" />
         </form>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

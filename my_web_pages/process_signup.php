@@ -21,14 +21,43 @@ if ($image["error"] == 0) { // if the image was loaded correctly
 
 $bio = $_POST["bio"];
 
-// Inserisci a questo punto il codice SQL per eseguire la INSERT nel tuo database
-// Assicurati di usare statement SQL 'prepared'.
-if ($insert_stmt = $mysqli->prepare("INSERT INTO members (username, email, password, salt, profile_image, bio) VALUES (?, ?, ?, ?, ?, ?)")) {    
+if (isset($_GET["update"])) {
+   sec_session_start();
+   $username = nullify_if_empty($username);
+   $email = nullify_if_empty($email);
+   $password = nullify_if_empty($password);
+   $random_salt = nullify_if_empty($random_salt);
+   $server_image_filename = $server_image_filename == "/images/defaultProfileImage.png" ? NULL : $server_image_filename;
+   $bio = nullify_if_empty($bio);
+
+   $update_stmt = $mysqli->prepare(
+      "UPDATE members SET 
+         username = COALESCE(?, username), 
+         email = COALESCE(?, email), 
+         password = COALESCE(?, password), 
+         salt = COALESCE(?, salt), 
+         profile_image = COALESCE(?, profile_image), 
+         bio = COALESCE(?, bio)
+      WHERE id = ?"
+   );
+   $update_stmt->bind_param('ssssssi', $username, $email, $password, $random_salt, $server_image_filename, $bio, $_SESSION["user_id"]);
+   if ($update_stmt->execute()) {
+      echo "Update successful";
+   }
+
+} else if ($insert_stmt = $mysqli->prepare("INSERT INTO members (username, email, password, salt, profile_image, bio) VALUES (?, ?, ?, ?, ?, ?)")) {    
    $insert_stmt->bind_param('ssssss', $username, $email, $password, $random_salt, $server_image_filename, $bio);
    // Esegui la query ottenuta.
    if ($insert_stmt->execute()) {
       echo "Sign up successful";
    }
+}
+
+function nullify_if_empty(string $s) {
+   if (strlen($s) == 0) {
+      return NULL;
+   }
+   return $s;
 }
 
 ?>
