@@ -35,7 +35,7 @@ $user_info = get_user_info($_GET["user_id"]);
             <p class="lh-sm"><?php ?></p>
             <div>
                 <a class="stats"><span class="fw-bold">following</span>: <?php echo ($user_info["followings"]) ?></a>
-                <a class="stats"><span class="fw-bold">follower</span>: <span id="num_followers"><?php echo ($user_info["followers"]) ?></span></a>
+                <a class="stats"><span class="fw-bold">followers</span>: <span id="num_followers"><?php echo ($user_info["followers"]) ?></span></a>
             </div>
         </div>
         <form class="col-3">
