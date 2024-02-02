@@ -35,13 +35,13 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="saved_posts.php">
                         <img src="./assets/images/Saved.png" alt="savedPosts">
                         Saved
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="notifications.php">
                         <img src="./assets/images/Notifications.png" alt="notifications">
                         Notifications
                     </a>
