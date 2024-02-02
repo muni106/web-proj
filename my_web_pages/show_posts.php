@@ -13,7 +13,7 @@ function show_posts(Array $posts) {
 <article class="row border-bottom py-3 w-100">
     <img src="show_image.php?image=<?php echo $author["profile_image_path"] ?>" alt="" class="col-2 img-fluid p-0" />
     <section class="col-10 d-grid gap-2">
-        <a rel="author" href="" class="text-decoration-none text-reset fw-bold"><?php echo $author["username"]; ?></a>
+        <a rel="author" href="./userProfile.php?user_id=<?php echo $author["id"] ?>" class="text-decoration-none text-reset fw-bold"><?php echo $author["username"]; ?></a>
         <p class="text-wrap text-truncate">
             <?php echo $post["body"]; ?>
             <!-- Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium quam architecto quaerat amet obcaecati voluptatem nobis soluta magni libero ea nostrum eaque ducimus, distinctio natus adipisci modi neque blanditiis id! -->
