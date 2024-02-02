@@ -1,5 +1,11 @@
-* {
+*, h1 {
   color: lightgrey;
+}
+
+a {
+  font-weight: bold;
+  color: lightgrey;
+  text-decoration: none;
 }
 
 body {

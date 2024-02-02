@@ -28,11 +28,11 @@
     require_once("get_user_info.php");
     $author = get_user_info($post["author"]);
     ?>
-    <h1>Replying to <a href=""><?php echo $author["username"] ?></a></h1>
+    <h1>Replying to <a href="./userProfile.php?user_id=<?php echo $author["id"] ?>"><?php echo $author["username"] ?></a></h1>
     <?php
     if (login_check($mysqli)):
     ?>
-        <main class="container p-2 mt-5 bg-white">
+        <main class="container p-2 mt-5">
     <?php
         require_once("get_post_info.php");
         $posts = get_reply_posts($post_id);
