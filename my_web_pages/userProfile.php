@@ -30,15 +30,17 @@ $user_info = get_user_info($_GET["user_id"]);
     if (user_exists($user_id)):
     ?>
         <div class="row m-2">
-            <div id="profileImageContainer" class="col-3">
+            <div id="profileImageContainer" class="col-3 py-5">
                 <img src="show_image.php?image=<?php echo ($user_info["profile_image_path"]); ?>" alt="profile image" id="profileImage">
             </div>
             <div id="" class="col-6">
-                <h1 id="profileNickname"><?php echo ($user_info["username"]) ?></h1>
-                <p class="lh-sm"><?php echo ($user_info["bio"]) ?></p>
-                <div>
-                    <a class="stats"><span class="fw-bold">following</span>: <?php echo ($user_info["followings"]) ?></a>
-                    <a class="stats"><span class="fw-bold">followers</span>: <span id="num_followers"><?php echo ($user_info["followers"]) ?></span></a>
+                <div id="" class="px-5">
+                        <h1 id="profileNickname"><?php echo ($user_info["username"]) ?></h1>
+                        <p class="lh-sm"><?php echo ($user_info["bio"]) ?></p>
+                    <div>
+                        <a class="stats"><span class="fw-bold">following</span>: <?php echo ($user_info["followings"]) ?></a>
+                        <a class="stats"><span class="fw-bold">followers</span>: <span id="num_followers"><?php echo ($user_info["followers"]) ?></span></a>
+                    </div>
                 </div>
             </div>
             <?php
