@@ -28,9 +28,8 @@
             $mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE);
             $post_id = $value["id"];
             $author = $value["author"];
-            $user_id = get_id_from_username($author);
             if ($stmt=$mysqli->prepare("SELECT post_id FROM saved_posts WHERE post_id = ?  AND user_id = ?")) {
-                $stmt->bind_param('ii', $post_id, $user_id);
+                $stmt->bind_param('ii', $post_id, $author);
                 $stmt->execute(); 
                 $stmt->store_result();
                 $stmt->bind_result($result);

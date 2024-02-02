@@ -59,7 +59,7 @@ function get_feed_from_user_id(int $id): Array {
 function get_all_feed(): Array {
     $mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE);
     $stmt = $mysqli->prepare(
-       "SELECT body, code, image_path, username, datetime, members.id
+       "SELECT body, code, image_path, author, datetime, members.id
         FROM members JOIN posts ON (members.id = posts.author);"
     );
     $stmt->execute(); // esegue la query appena creata.
