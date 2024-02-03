@@ -20,6 +20,9 @@
         <?php
         if(isset($_GET['error'])) { 
             echo '<h4 class="fw-bolder my-5 p-3">Login failed!</h1>';
+        } else {
+            header('Location: feed.php', true, 303);
+            die();
         }
         ?>
         <form action="process_login.php" method="post" name="login_form" class="d-grid gap-4 d-block p-3">

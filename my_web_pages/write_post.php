@@ -75,9 +75,9 @@
                 <label for="text" class="d-none">Write the main content here</label>
                 <textarea type="text" name="text" id="text" id="postDescription" placeholder="Write something" class="border-0 align-middle col-10 d-inline w-75 p-2"></textarea>
             </fieldset>
-            <fieldset class="d-flex justify-content-center">
+            <fieldset class="d-flex justify-content-end">
                 <label for="code" class="d-none">Insert your code here:</label>
-                <textarea name="code" id="code" cols="30" rows="5" placeholder="Insert your code" class="font-monospace rounded-0 text-dark bg-secondary p-1">print("Hello World!")</textarea>
+                <textarea name="code" id="code" cols="48" rows="5" placeholder="Insert your code" class="font-monospace rounded-0 text-dark bg-secondary p-1">print("Hello World!")</textarea>
             </fieldset>
             <fieldset>
                 <label for="image" class="form-label">Load your image here</label>
@@ -98,15 +98,15 @@
         </form>
     </main>
 
-    <aside id="left_bar_desktop p-0">
-        <form>
-            <label for="searching" id="search-bar">
-                <input id="search-input" type="text" placeholder="Someone.." />
-                <input type="image" src="assets/images/Explore.png" alt="Submit" />
-                <!-- <img src="assets/images/Explore.png" alt="search"> -->
-            </label>
-        </form>
-    </aside>
+        <aside id="left_bar_desktop p-0">
+            <form>
+                <label for="searching" id="search-bar">
+                    <input id="search-input" type="text" placeholder="Someone.." />
+                    <input type="image" src="assets/images/Explore.png" alt="Submit"/>
+                    <!-- <img src="assets/images/Explore.png" alt="search"> -->
+                </label>
+            </form>
+        </aside>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>

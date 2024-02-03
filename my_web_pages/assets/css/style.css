@@ -38,6 +38,11 @@ main {
   color: lightgray;
 }
 
+.btn:hover {
+  border-color: rgb(181, 110, 34);
+  color: lightgray;
+}
+
 img {
   object-fit: contain;
   align-self: self-start;
