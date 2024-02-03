@@ -27,34 +27,76 @@ $user_info = get_user_info($_GET["user_id"]);
     require("headerProfile.php");
     require("db_connect.php");
     $user_id = $_GET["user_id"];
-    if (user_exists($user_id)):
+    if (user_exists($user_id)) :
     ?>
-        <div class="row m-2">
-            <div id="profileImageContainer" class="col-3">
-                <img src="show_image.php?image=<?php echo ($user_info["profile_image_path"]); ?>" alt="profile image" id="profileImage">
-            </div>
-            <div id="" class="col-6">
-                <h1 id="profileNickname"><?php echo ($user_info["username"]) ?></h1>
-                <p class="lh-sm"><?php echo ($user_info["bio"]) ?></p>
-                <div>
-                    <a class="stats"><span class="fw-bold">following</span>: <?php echo ($user_info["followings"]) ?></a>
-                    <a class="stats"><span class="fw-bold">followers</span>: <span id="num_followers"><?php echo ($user_info["followers"]) ?></span></a>
+        <aside id="menu_desktop">
+            <img src="assets/images/logo.png" alt="logo">
+            <ul>
+                <li>
+                    <a href="feed.php">
+                        <img src="./assets/images/Home.png" alt="homeImg">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./assets/images/Explore.png" alt="explore">
+                        Explore
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./assets/images/Saved.png" alt="savedPosts">
+                        Saved
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./assets/images/Notifications.png" alt="notifications">
+                        Notifications
+                    </a>
+                </li>
+                <li>
+                    <a href="write_post.php">
+                        <img src="./assets/images/Write.png" alt="writePost">
+                        Write
+                    </a>
+                </li>
+                <li>
+                    <a href="userProfileMe.php">
+                        <img src="./assets/images/Profile.png" alt="profilePersonal">
+                        Profile
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <main class="container">
+            <div class="row m-2">
+                <div id="profileImageContainer" class="col-3">
+                    <img src="show_image.php?image=<?php echo ($user_info["profile_image_path"]); ?>" alt="profile image" id="profileImage">
                 </div>
-            </div>
-            <?php
-            sec_session_start();
-            if ($user_info["id"] == $_SESSION["user_id"]): ?>
-                <div class="col-3">
-                    <a id="profileBtn" href="./signup.php?update" class="btn p-0 followButton">Update profile</a>
+                <div id="" class="col-6">
+                    <h1 id="profileNickname"><?php echo ($user_info["username"]) ?></h1>
+                    <p class="lh-sm"><?php echo ($user_info["bio"]) ?></p>
+                    <div>
+                        <a class="stats"><span class="fw-bold">following</span>: <?php echo ($user_info["followings"]) ?></a>
+                        <a class="stats"><span class="fw-bold">followers</span>: <span id="num_followers"><?php echo ($user_info["followers"]) ?></span></a>
+                    </div>
                 </div>
-            <?php else: ?>
-                <form class="col-3">
-                    <label for="profileBtn" class="d-none">Click here to follow this user</label>
-                    <button id="profileBtn" type="button" onclick="follow_user(<?php echo $user_info['id'] ?>)" class="btn p-0 followButton">Follow</button>
-                </form>
-            <?php endif; ?>
-        </div>
-        <main class="container p-2 mt-5">
+                <?php
+                sec_session_start();
+                if ($user_info["id"] == $_SESSION["user_id"]) : ?>
+                    <div class="col-3">
+                        <a id="profileBtn" href="./signup.php?update" class="btn p-0 followButton">Update profile</a>
+                    </div>
+                <?php else : ?>
+                    <form class="col-3">
+                        <label for="profileBtn" class="d-none">Click here to follow this user</label>
+                        <button id="profileBtn" type="button" onclick="follow_user(<?php echo $user_info['id'] ?>)" class="btn p-0 followButton">Follow</button>
+                    </form>
+                <?php endif; ?>
+            </div>
             <h1 class="fw-bolder border-bottom py-3">Posts</h1>
             <?php
             require_once("get_feed.php");
@@ -63,8 +105,18 @@ $user_info = get_user_info($_GET["user_id"]);
             show_posts($posts);
             ?>
         </main>
-        <?php
-    else: 
+
+        <aside id="left_bar_desktop p-0">
+            <form>
+                <label for="searching" id="search-bar">
+                    <input id="search-input" type="text" placeholder="Someone.." />
+                    <input type="image" src="assets/images/Explore.png" alt="Submit"/>
+                    <!-- <img src="assets/images/Explore.png" alt="search"> -->
+                </label>
+            </form>
+        </aside>
+    <?php
+    else :
     ?>
         <p> User does not exist </p>
     <?php
