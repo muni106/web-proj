@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,23 +12,66 @@
     <link rel="stylesheet" href="assets/css/navbar.css">
     <title>Write post</title>
 </head>
+
 <body>
     <?php
-        require_once("db_info.php");
-        $mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE);
-        require_once("db_connect.php");
-        sec_session_start();
-        require_once("get_user_info.php");
-        $user_info = get_user_info($_SESSION["user_id"]); 
+    require_once("db_info.php");
+    $mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE);
+    require_once("db_connect.php");
+    sec_session_start();
+    require_once("get_user_info.php");
+    $user_info = get_user_info($_SESSION["user_id"]);
     ?>
     <?php require("headerProfile.php") ?>
-    <main class="m-2">
+    <aside id="menu_desktop">
+        <img src="assets/images/logo.png" alt="logo">
+        <ul>
+            <li>
+                <a href="feed.php">
+                    <img src="./assets/images/Home.png" alt="homeImg">
+                    Home
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./assets/images/Explore.png" alt="explore">
+                    Explore
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./assets/images/Saved.png" alt="savedPosts">
+                    Saved
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./assets/images/Notifications.png" alt="notifications">
+                    Notifications
+                </a>
+            </li>
+            <li>
+                <a href="write_post.php">
+                    <img src="./assets/images/Write.png" alt="writePost">
+                    Write
+                </a>
+            </li>
+            <li>
+                <a href="userProfileMe.php">
+                    <img src="./assets/images/Profile.png" alt="profilePersonal">
+                    Profile
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    <main class="container m-2">
         <h1 class="fw-bolder py-3 d-inline col-10">Write a post</h1>
         <form action="./process_write_post.php" method="post" enctype="multipart/form-data" class="d-grid gap-4 my-2">
             <fieldset class="textContainer">
                 <a href="">
-                    <img src="show_image.php?image=<?php echo($user_info["profile_image_path"]); ?>" alt="profile image" id="profileImage" >
-                </a> 
+                    <img src="show_image.php?image=<?php echo ($user_info["profile_image_path"]); ?>" alt="profile image" id="profileImage">
+                </a>
                 <label for="text" class="d-none">Write the main content here</label>
                 <textarea type="text" name="text" id="text" id="postDescription" placeholder="Write something" class="border-0 align-middle col-10 d-inline w-75 p-2"></textarea>
             </fieldset>
@@ -37,22 +81,34 @@
             </fieldset>
             <fieldset>
                 <label for="image" class="form-label">Load your image here</label>
-                <input name="image" id="image" type="file" class="form-control rounded-0"  />
+                <input name="image" id="image" type="file" class="form-control rounded-0" />
             </fieldset>
             <input type="hidden" name="current_datetime" value="<?php echo date('Y-m-d H:i:s'); ?>">
             <fieldset class="d-flex justify-content-center">
                 <label for="publish" class="d-none">Publish this post</label>
                 <?php
-                if (isset($_GET["reply"])):
+                if (isset($_GET["reply"])) :
                 ?>
                     <input type="hidden" name="reply" value='<?php echo $_GET["reply"] ?>'>
                 <?php
                 endif;
                 ?>
-                <input type="submit" value="Publish" id="publish" class="btn block-btn text-white fw-bold rounded-pill d-block w-75"/>
+                <input type="submit" value="Publish" id="publish" class="btn block-btn text-white fw-bold rounded-pill d-block w-75" />
             </fieldset>
         </form>
     </main>
+
+    <aside id="left_bar_desktop p-0">
+        <form>
+            <label for="searching" id="search-bar">
+                <input id="search-input" type="text" placeholder="Someone.." />
+                <input type="image" src="assets/images/Explore.png" alt="Submit" />
+                <!-- <img src="assets/images/Explore.png" alt="search"> -->
+            </label>
+        </form>
+    </aside>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
+
 </html>
