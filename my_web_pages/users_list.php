@@ -4,6 +4,11 @@ function show_users($users) {
 ?>
     <ul class="list-unstyled m-2">
 <?php
+if (count($users) == 0) {
+    ?>
+    <p> No users found </p>
+<?php
+} else {
     foreach ($users as $user):
 ?>
         <li class="border-bottom align-middle">
@@ -15,5 +20,6 @@ function show_users($users) {
 ?>
     </ul>
 <?php
+}
 }
 ?>

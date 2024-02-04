@@ -1,3 +1,6 @@
+<title>
+    Following
+</title>
 <?php
 require_once("db_info.php");
 require_once("get_user_info.php");
