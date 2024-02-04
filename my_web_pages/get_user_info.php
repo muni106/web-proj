@@ -72,4 +72,43 @@ function user_exists(int $user_id): bool {
     }
 }
 
+function get_following(int $user_id): Array {
+    $mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE);
+    $stmt = $mysqli->prepare(
+        "SELECT members.id, username, profile_image  FROM followers JOIN members on followee_id = members.id WHERE follower_id = ?"
+    );
+    $stmt->bind_param('i', $user_id);
+    $stmt->execute();
+    $stmt->store_result();
+    $stmt->bind_result($id, $username, $profile_image_path);
+    $result = array();
+    while ($stmt->fetch()):
+        array_push($result, array(
+            "id" => $id,
+            "username" => $username,
+            "profile_image_path" => $profile_image_path
+        ));
+    endwhile;
+    return $result;
+}
+
+function get_followers(int $user_id): Array {
+    $mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE);
+    $stmt = $mysqli->prepare(
+        "SELECT members.id, username, profile_image  FROM followers JOIN members on followee_id = members.id WHERE followee_id = ?"
+    );
+    $stmt->bind_param('i', $user_id);
+    $stmt->execute();
+    $stmt->store_result();
+    $stmt->bind_result($id, $username, $profile_image_path);
+    $result = array();
+    while ($stmt->fetch()):
+        array_push($result, array(
+            "id" => $id,
+            "username" => $username,
+            "profile_image_path" => $profile_image_path
+        ));
+    endwhile;
+    return $result;
+}
 ?>
