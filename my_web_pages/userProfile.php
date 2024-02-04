@@ -91,9 +91,10 @@ $user_info = get_user_info($_GET["user_id"]);
                         <a id="profileBtn" href="./signup.php?update" class="btn p-0 followButton">Update profile</a>
                     </div>
                 <?php else : ?>
-                    <form class="col-3">
+                    <form class="col-3" action="process_follow.php" method="get">
                         <label for="profileBtn" class="d-none">Click here to follow this user</label>
-                        <button id="profileBtn" type="button" onclick="follow_user(<?php echo $user_info['id'] ?>)" class="btn p-0 followButton">Follow</button>
+                        <input type="hidden" name="followed_id" value="<?php echo $user_info["id"]?>">
+                        <button type="submit" id="profileBtn" type="button" class="btn p-0 followButton">Follow</button>
                     </form>
                 <?php endif; ?>
             </div>

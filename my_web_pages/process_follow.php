@@ -17,4 +17,11 @@ function follow_user_by_id($followed_id) {
     return false;
 }
 
+$followed_id = $_GET["followed_id"];
+$execution_result = follow_user_by_id($followed_id);
+if ($execution_result) {
+    echo "Follow processed successfully";
+} else {
+    echo "Follow processing failed";
+}
 ?>
