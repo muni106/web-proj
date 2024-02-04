@@ -108,13 +108,7 @@ $user_info = get_user_info($_GET["user_id"]);
         </main>
 
         <aside id="left_bar_desktop p-0">
-            <form>
-                <label for="searching" id="search-bar">
-                    <input id="search-input" type="text" placeholder="Someone.." />
-                    <input type="image" src="assets/images/Explore.png" alt="Submit"/>
-                    <!-- <img src="assets/images/Explore.png" alt="search"> -->
-                </label>
-            </form>
+            <?php require_once("search_form.php") ?>
         </aside>
     <?php
     else :
