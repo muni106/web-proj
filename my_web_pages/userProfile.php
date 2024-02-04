@@ -80,8 +80,8 @@ $user_info = get_user_info($_GET["user_id"]);
                     <h1 id="profileNickname"><?php echo ($user_info["username"]) ?></h1>
                     <p class="lh-sm"><?php echo ($user_info["bio"]) ?></p>
                     <div>
-                        <a id="followersBtn" href='followers.php?user_id=<?php(echo $user_info["user_id"]); ?>' class="btn m-1 followButton">Followers: <?php echo ($user_info["followers"]) ?></a>
-                        <a id="followingBtn" href='following.php?user_id=<?php(echo $user_info["user_id"]); ?>' class="btn m-1 followButton">Following: <?php echo ($user_info["followings"]) ?></a>
+                        <a id="followersBtn" href='followers.php?user_id=<?php echo($user_info["id"]); ?>' class="btn m-1 followButton">Followers: <?php echo ($user_info["followers"]) ?></a>
+                        <a id="followingBtn" href='following.php?user_id=<?php echo($user_info["id"]); ?>' class="btn m-1 followButton">Following: <?php echo ($user_info["followings"]) ?></a>
                     </div>
                 </div>
                 <?php
