@@ -20,7 +20,8 @@ function follow_user_by_id($followed_id) {
 $followed_id = $_GET["followed_id"];
 $execution_result = follow_user_by_id($followed_id);
 if ($execution_result) {
-    echo "Follow processed successfully";
+      header('Location: userProfile.php?user_id='.$followed_id, true, 303); 
+      die();
 } else {
     echo "Follow processing failed";
 }
