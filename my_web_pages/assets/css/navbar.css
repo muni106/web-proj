@@ -10,14 +10,14 @@
     /* padding: 0 15vw; */
   }
 
-  aside {
+  aside, nav {
     display: flex;
     flex-direction: column;
     position: sticky;
     margin: 1vw 3vw;
     top: 0;
   }
-  aside img {
+  nav img {
     width: 3vw;
   }
 
@@ -96,7 +96,7 @@
   }
 }
 @media only screen and (max-width: 760px) {
-  aside {
+  aside, nav {
     display: none;
   }
   header {
