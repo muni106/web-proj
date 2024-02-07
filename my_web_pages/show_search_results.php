@@ -42,11 +42,17 @@
         ));
     }
     ?>
-    <h1 class="m-2">Search results:</h1>
-    <?php
-    require_once("users_list.php");
-    show_users($users);
-    endif;
-    ?>
+
+    <main class="m-3 col-7">
+        <h1 class="m-2">Search results:</h1>
+        <?php
+        require_once("users_list.php");
+        show_users($users);
+        endif;
+        ?>
+    </main>
+    <aside id="left_bar_desktop p-0" class="col-2 p-1">
+        <?php require_once("search_form.php") ?>
+    </aside>
 </body>
 </html>
