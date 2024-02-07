@@ -22,7 +22,7 @@
     $user = get_user_info($user_id);
     ?>
     <main>
-        <h1 class="p-1">Followers of <a href="./userProfile.php?user_id=<?php echo $user["id"] ?>"><?php echo $user["username"] ?></a></h1>
+        <h1 class="p-1">Users followed by <a href="./userProfile.php?user_id=<?php echo $user["id"] ?>"><?php echo $user["username"] ?></a></h1>
         <?php
         show_users($following);
         ?>   
