@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/css/chrome.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/search.css">
 </head>
 <body>
     <?php
@@ -43,7 +44,8 @@
     }
     ?>
     <?php require("navbar.php"); ?>
-    <main class="m-3 col-lg-7">
+    <main class="m-3">
+        <?php require_once("search_form.php"); ?>
         <h1 class="m-2">Search results:</h1>
         <?php
         require_once("users_list.php");
@@ -51,8 +53,5 @@
         endif;
         ?>
     </main>
-    <aside id="left_bar_desktop p-0" class="col-2 p-1">
-        <?php require_once("search_form.php") ?>
-    </aside>
 </body>
 </html>
