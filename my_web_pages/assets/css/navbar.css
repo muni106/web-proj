@@ -223,3 +223,9 @@
     border-style: none;
     outline-color: transparent; 
 }
+
+#profileMini {
+  width: 4vw;
+  border-radius: 100%;
+  aspect-ratio: 1/1;
+}

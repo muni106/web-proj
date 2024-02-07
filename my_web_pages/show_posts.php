@@ -10,8 +10,8 @@ function show_posts(Array $posts) {
     foreach ($posts as $post):
         $author = get_user_info($post["author"]);
 ?>
-<article class="row border-bottom py-3 w-100">
-    <img src="show_image.php?image=<?php echo $author["profile_image_path"] ?>" alt="" class="col-2 img-fluid p-0" />
+<article class="row border-bottom py-3 w-100 px-4 m-1">
+    <img src="show_image.php?image=<?php echo $author["profile_image_path"] ?>" alt="" id="profileMini" class="col-2 img-fluid p-0" />
     <section class="col-10 d-grid gap-2">
         <a rel="author" href="./userProfile.php?user_id=<?php echo $author["id"] ?>" class="text-decoration-none text-reset fw-bold"><?php echo $author["username"]; ?></a>
         <p class="text-wrap text-truncate">
