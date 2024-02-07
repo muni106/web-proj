@@ -40,8 +40,8 @@ $user_info = get_user_info($_GET["user_id"]);
                     <h1 id="profileNickname"><?php echo ($user_info["username"]) ?></h1>
                     <p class="lh-sm"><?php echo ($user_info["bio"]) ?></p>
                     <div>
-                        <a id="followersBtn" href='followers.php?user_id=<?php echo($user_info["id"]); ?>' class="btn m-1 followButton w-100">Followers: <?php echo ($user_info["followers"]) ?></a>
-                        <a id="followingBtn" href='following.php?user_id=<?php echo($user_info["id"]); ?>' class="btn m-1 followButton w-100">Following: <?php echo ($user_info["followings"]) ?></a>
+                        <a id="followersBtn" href='followers.php?user_id=<?php echo($user_info["id"]); ?>' class="btn m-1 followButton w-100 text-light">Followers: <?php echo ($user_info["followers"]) ?></a>
+                        <a id="followingBtn" href='following.php?user_id=<?php echo($user_info["id"]); ?>' class="btn m-1 followButton w-100 text-light">Following: <?php echo ($user_info["followings"]) ?></a>
                     </div>
                 </div>
                 <?php
@@ -54,7 +54,7 @@ $user_info = get_user_info($_GET["user_id"]);
                     <form class="col-2" action="process_follow.php" method="get">
                         <label for="profileBtn" class="d-none">Click here to follow this user</label>
                         <input type="hidden" name="followed_id" value="<?php echo $user_info["id"]?>">
-                        <button type="submit" id="profileBtn" type="button" class="btn p-0 followButton">Follow</button>
+                        <button type="submit" id="profileBtn" type="button" class="btn p-0 followButton text-light">Follow</button>
                     </form>
                 <?php endif; ?>
             </div>
