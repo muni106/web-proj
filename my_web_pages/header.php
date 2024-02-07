@@ -14,7 +14,7 @@
             <img src="./show_image.php?image=<?php echo($user_info["profile_image_path"]); ?>" alt="profile image" id="profileImage" >
         </a> 
         <a href="">
-            <img src="./assets/images/logo.png" alt="SocialName" class="logo"/> 
+            <img src="./assets/images/logo.png" alt="Petris logo" class="logo"/> 
         </a> 
         <div class="hamburger-menu">
             <input id="menu__toggle" type="checkbox" />

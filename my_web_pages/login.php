@@ -6,17 +6,17 @@
     <link rel="shortcut icon" type="image/png" href="assets/images/logo.png" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Log into SocialName</title>
+    <title>Log into Petris</title>
 </head>
 <body>
     <script type="text/javascript" src="./assets/js/sha512.js"></script>
     <script type="text/javascript" src="./assets/js/forms.js"></script>
     <header class="d-flex justify-content-center">
-        <img src="./assets/images/logo.png" alt="SocialName" />
+        <img src="./assets/images/logo.png" alt="Petris logo" />
     </header>
     <main>
         <a href="index.php"> <img src="./assets/images/back.png" alt="left arrow" height="5%" width="5%"> </a>
-        <h1 class="fw-bolder my-5 p-3">Sign in to SocialName</h1>
+        <h1 class="fw-bolder my-5 p-3">Sign in to Petris</h1>
         <?php
         if(isset($_GET['error'])) { 
             echo '<h4 class="fw-bolder my-5 p-3">Login failed!</h1>';

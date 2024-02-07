@@ -23,7 +23,7 @@
     $is_update = isset($_GET["update"]) && isset($_SESSION["user_id"]);
     ?>
     <header class="d-flex justify-content-center">
-        <img src="assets/images/logo.png" alt="SocialName" />
+        <img src="assets/images/logo.png" alt="Petris logo" />
     </header>
     <main>
         <a href="index.php"> <img src="./assets/images/back.png" alt="left arrow" height="5%" width="5%"> </a>
