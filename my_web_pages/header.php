@@ -22,7 +22,7 @@
             </label>
 
             <ul id="menu__box">
-            <li><a class="menu__item" href="index.php">Home</a></li>
+            <li><a class="menu__item" href="feed.php">Home</a></li>
             <li><a class="menu__item" href="userProfileMe.php">Profile</a></li>
             <li><a class="menu__item" href="write_post.php">Write</a></li>
             <li><a class="menu__item" href="#">Search</a></li>

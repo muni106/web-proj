@@ -2,7 +2,6 @@
 
 require_once("db_info.php");
 $mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE);
-// Se ti stai connettendo usando il protocollo TCP/IP, invece di usare un socket UNIX, ricordati di aggiungere il parametro corrispondente al numero di porta.
 
 function sec_session_start() {
     $session_name = 'sec_session_id'; // Imposta un nome di sessione
@@ -120,4 +119,3 @@ function checkbrute($user_id, $mysqli) {
     }
  }
 
-?>
