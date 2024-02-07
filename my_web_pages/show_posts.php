@@ -16,12 +16,9 @@ function show_posts(Array $posts) {
         <a rel="author" href="./userProfile.php?user_id=<?php echo $author["id"] ?>" class="text-decoration-none text-reset fw-bold"><?php echo $author["username"]; ?></a>
         <p class="text-wrap text-truncate">
             <?php echo $post["body"]; ?>
-            <!-- Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium quam architecto quaerat amet obcaecati voluptatem nobis soluta magni libero ea nostrum eaque ducimus, distinctio natus adipisci modi neque blanditiis id! -->
         </p>
         <code class="d-block p-2 text-wrap text-truncate">
             <?php echo $post["code"]; ?>
-            <!-- print("hello world") -->
-            <!-- Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum deserunt necessitatibus, quasi a quis perspiciatis impedit, consequuntur officiis accusamus, odio minima nesciunt vitae adipisci. Eligendi deserunt sit perspiciatis itaque quam. -->
         </code>
         <?php if ($post["image_path"] != NULL): ?>
             <img src="show_image.php?image=<?php echo $post["image_path"]; ?>" alt="" class="w-100">
