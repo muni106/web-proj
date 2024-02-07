@@ -137,22 +137,20 @@
     margin-top: 5vw;
   }
 
-  #menu__toggle {
-    opacity: 0;
-  }
-
-  #menu__toggle:checked + .menu__btn > span {
+  .spanClosed {
     transform: rotate(45deg);
   }
-  #menu__toggle:checked + .menu__btn > span::before {
+  .spanClosed::before {
     top: 0;
     transform: rotate(0deg);
   }
-  #menu__toggle:checked + .menu__btn > span::after {
+
+  .spanClosed::after {
     top: 0;
     transform: rotate(90deg);
   }
-  #menu__toggle:checked ~ .menu__box {
+
+  .menu__box__open {
     left: 0 !important;
   }
 
@@ -163,6 +161,7 @@
     cursor: pointer;
     z-index: 1;
   }
+
   .menu__btn > span,
   .menu__btn > span::before,
   .menu__btn > span::after {

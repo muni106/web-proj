@@ -7,6 +7,7 @@
     $user_info = get_user_info($_SESSION["user_id"]); 
 ?>
 
+<script src="./assets/js/follow_user.js"></script>
 
 <header>
     <nav class="navbar navbar-expand-lg d-flex justify-content-between align-items-center p-2">
@@ -17,9 +18,10 @@
             <img src="./assets/images/logo.png" alt="Petris logo" class="logo"/> 
         </a> 
         <div class="hamburger-menu">
+            
             <input id="menu__toggle" type="checkbox" />
             <label class="menu__btn" for="menu__toggle">
-            <span></span>
+                <span id="spanning"></span>
             </label>
 
             <ul class="menu__box">
