@@ -12,6 +12,10 @@
     background-color: rgb(43, 43, 43);
 }
 
+#code {
+    background-color: rgb(43, 43, 43);
+}
+
 #text:focus {
     outline-color: rgba(181, 110, 34, 255);
 }

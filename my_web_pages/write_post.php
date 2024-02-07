@@ -34,11 +34,11 @@
                     <img src="show_image.php?image=<?php echo ($user_info["profile_image_path"]); ?>" alt="profile image" id="profileImage">
                 </a>
                 <label for="text" class="d-none">Write the main content here</label>
-                <textarea type="text" name="text" id="text" placeholder="Write something" class="border-0 align-middle col-10 d-inline w-75 p-2"></textarea>
+                <textarea type="text" name="text" id="text" placeholder="Write something" class="align-middle text-light col-10 d-inline w-75 p-2 border border-secondary"></textarea>
             </fieldset>
             <fieldset class="d-flex justify-content-end">
                 <label for="code" class="d-none">Insert your code here:</label>
-                <textarea name="code" id="code" cols="48" rows="5" placeholder="Insert your code" class="font-monospace rounded-0 text-dark bg-secondary p-1">print("Hello World!")</textarea>
+                <textarea name="code" id="code" cols="48" rows="5" placeholder="Insert your code" class="font-monospace rounded-0 text-light p-1 border border-secondary">print("Hello World!")</textarea>
             </fieldset>
             <fieldset>
                 <label for="image" class="form-label">Load your image here</label>
