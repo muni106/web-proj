@@ -16,6 +16,7 @@
             <li><a class="menu__item" href="notifications.php">Notifications</a></li>
             <li><a class="menu__item" href="write_post.php">Write</a></li>
             <li><a class="menu__item" href="userProfileMe.php">Profile</a></li>
+            <li><a class="menu__item" href="process_logout.php">Logout</a></li>
             </ul>
         </div>
     </nav>
