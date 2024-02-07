@@ -26,6 +26,7 @@ $user_info = get_user_info($_GET["user_id"]);
     <?php
     require("headerProfile.php");
     require("db_connect.php");
+    sec_session_start();
     $user_id = $_GET["user_id"];
     if (user_exists($user_id)) :
     ?>
@@ -45,7 +46,6 @@ $user_info = get_user_info($_GET["user_id"]);
                     </div>
                 </div>
                 <?php
-                sec_session_start();
                 if ($user_info["id"] == $_SESSION["user_id"]) : ?>
                     <div class="col-2">
                         <a id="profileBtn" href="./signup.php?update" class="btn p-0 followButton">Update profile</a>

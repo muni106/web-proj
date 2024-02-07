@@ -32,6 +32,12 @@
             </a>
         </li>
         <li>
+            <a href="userProfileMe.php">
+                <img src="./assets/images/Profile.png" alt="profilePersonal">
+                Profile
+            </a>
+        </li>
+        <li>
             <a href="process_logout.php">
                 Logout
             </a>
