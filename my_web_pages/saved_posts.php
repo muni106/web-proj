@@ -12,12 +12,13 @@
 </head>
 <body>
     <?php 
-        require "header.php" 
+        require "header.php"; 
+        require "navbar.php";
     ?>
     <?php
         if (login_check($mysqli)):
     ?>
-        <main class="container p-2 mt-3 bg-white">
+        <main class="container p-2 mt-3">
         <h1 class="fw-bolder border-bottom py-3">Saved posts</h1>
     <?php
         require_once("get_feed.php");
