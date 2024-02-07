@@ -8,7 +8,7 @@ if(isset($_POST['email'], $_POST['password'])) {
    $password = $_POST['password']; // Recupero la password criptata.
    if(login($email, $password, $mysqli) == true) {
       // Login eseguito
-      echo 'Success: You have been logged in!';
+      header('Location: feed.php', true, 303);
    } else {
       // Login fallito
       header('Location: ./login.php?error=1');

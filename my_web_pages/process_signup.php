@@ -49,7 +49,8 @@ if (isset($_GET["update"])) {
    $insert_stmt->bind_param('ssssss', $username, $email, $password, $random_salt, $server_image_filename, $bio);
    // Esegui la query ottenuta.
    if ($insert_stmt->execute()) {
-      echo "Sign up successful";
+         header('Location: login.php', true, 303);
+         die();
    }
 }
 
