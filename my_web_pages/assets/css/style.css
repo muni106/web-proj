@@ -58,7 +58,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 4vw;
+    /* padding: 4vw; */
   }
 
   header {

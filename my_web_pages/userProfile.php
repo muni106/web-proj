@@ -29,7 +29,7 @@ $user_info = get_user_info($_GET["user_id"]);
     $user_id = $_GET["user_id"];
     if (user_exists($user_id)) :
     ?>
-        <aside id="menu_desktop">
+        <aside id="menu_desktop" class="col-2">
             <img src="assets/images/logo.png" alt="logo">
             <ul>
                 <li>
@@ -107,7 +107,7 @@ $user_info = get_user_info($_GET["user_id"]);
             ?>
         </main>
 
-        <aside id="left_bar_desktop p-0">
+        <aside id="left_bar_desktop p-0" class="col-2">
             <?php require_once("search_form.php") ?>
         </aside>
     <?php
