@@ -18,8 +18,20 @@
     require_once("get_user_info.php");
     $user_id = $_GET["user_id"];
     $following = get_followers($user_id);
+    $user = get_user_info($user_id);
     require_once("users_list.php");
-    show_users($following);
-    ?>   
+    require("header.php");
+    require("navbar.php");
+    ?>
+    <main>
+        <h1 class="p-1">Followers of <a href="./userProfile.php?user_id=<?php echo $user["id"] ?>"><?php echo $user["username"] ?></a></h1>
+        <?php
+        show_users($following);
+        ?>   
+    </main>
+
+    <aside id="left_bar_desktop">
+        <?php require_once("search_form.php") ?>
+    </aside>
 </body>
 </html>
