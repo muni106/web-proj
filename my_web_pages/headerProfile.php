@@ -10,9 +10,12 @@
             </label>
 
             <ul id="menu__box">
-            <li><a class="menu__item" href="feed.php">Home</a></li>
-            <li><a class="menu__item" href="userProfileMe.php">Profile</a></li>
+            <li><a class="menu__item" href="index.php">Home</a></li>
+            <li><a class="menu__item" href="show_search_result.php?word=">Explore</a></li>
+            <li><a class="menu__item" href="saved_posts.php?">Saved</a></li>
+            <li><a class="menu__item" href="notifications.php">Notifications</a></li>
             <li><a class="menu__item" href="write_post.php">Write</a></li>
+            <li><a class="menu__item" href="userProfileMe.php">Profile</a></li>
             </ul>
         </div>
     </nav>
