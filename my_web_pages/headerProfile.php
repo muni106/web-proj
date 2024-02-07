@@ -5,12 +5,11 @@
             <img src="./assets/images/back.png" alt="back" id="back"/>
         </a> 
         <div class="hamburger-menu">
-            <input id="menu__toggle" type="checkbox" />
-            <label class="menu__btn" for="menu__toggle">
-            <span></span>
+            <label id="menu__btn" for="menu__toggle">
+                <span id="spanning"></span>
             </label>
 
-            <ul class="menu__box">
+            <ul id="menu__box">
             <li><a class="menu__item" href="index.php">Home</a></li>
             <li><a class="menu__item" href="userProfileMe.php">Profile</a></li>
             <li><a class="menu__item" href="write_post.php">Write</a></li>
@@ -18,3 +17,5 @@
         </div>
     </nav>
 </header>
+
+<script src="./assets/js/navbar.js"></script>
