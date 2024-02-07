@@ -46,12 +46,10 @@
         show_posts($filtered_posts);
     ?>
 
-    <form action="process_notifications.php" method="post" name="clear_notifications" class="d-grid gap-4 d-block p-3">
-        <fieldset>
-            <input type="hidden" name="current_datetime" value="<?php echo date('Y-m-d H:i:s'); ?>">
-        </fieldset>
-
-        <input type="submit" value="Clear notifications" onclick="" class="btn block-btn text-white fw-bold rounded-pill d-block mx-3" />
+    <form action="process_notifications.php" method="post" name="clear_notifications" class="d-grid gap-4 d-block p-3 justify-content-center">
+        <input type="hidden" name="current_datetime" value="<?php echo date('Y-m-d H:i:s'); ?>">
+        <label for="clear" class="d-none">Click here to clear your notifications</label>
+        <input it="clear" type="submit" value="Clear notifications" onclick="" class="btn block-btn text-white fw-bold rounded-pill d-block mx-3" />
     </form>
         </main>
         <?php
