@@ -29,7 +29,7 @@ $user_info = get_user_info($_GET["user_id"]);
     $user_id = $_GET["user_id"];
     if (user_exists($user_id)) :
     ?>
-        <aside id="menu_desktop" class="col-2">
+        <aside id="menu_desktop" class="col-2 p-1">
             <img src="assets/images/logo.png" alt="logo">
             <ul>
                 <li>
@@ -74,9 +74,9 @@ $user_info = get_user_info($_GET["user_id"]);
         <main class="container">
             <div class="row m-2">
                 <div id="profileImageContainer" class="col-3">
-                    <img src="show_image.php?image=<?php echo ($user_info["profile_image_path"]); ?>" alt="profile image" id="profileImage">
+                    <img src="show_image.php?image=<?php echo ($user_info["profile_image_path"]); ?>" alt="profile image" id="profileImage" class="w-100">
                 </div>
-                <div id="" class="col-6">
+                <div id="" class="col-7">
                     <h1 id="profileNickname"><?php echo ($user_info["username"]) ?></h1>
                     <p class="lh-sm"><?php echo ($user_info["bio"]) ?></p>
                     <div>
@@ -87,11 +87,11 @@ $user_info = get_user_info($_GET["user_id"]);
                 <?php
                 sec_session_start();
                 if ($user_info["id"] == $_SESSION["user_id"]) : ?>
-                    <div class="col-3">
+                    <div class="col-2">
                         <a id="profileBtn" href="./signup.php?update" class="btn p-0 followButton">Update profile</a>
                     </div>
                 <?php else : ?>
-                    <form class="col-3" action="process_follow.php" method="get">
+                    <form class="col-2" action="process_follow.php" method="get">
                         <label for="profileBtn" class="d-none">Click here to follow this user</label>
                         <input type="hidden" name="followed_id" value="<?php echo $user_info["id"]?>">
                         <button type="submit" id="profileBtn" type="button" class="btn p-0 followButton">Follow</button>
@@ -107,7 +107,7 @@ $user_info = get_user_info($_GET["user_id"]);
             ?>
         </main>
 
-        <aside id="left_bar_desktop p-0" class="col-2">
+        <aside id="left_bar_desktop p-0" class="col-2 p-1">
             <?php require_once("search_form.php") ?>
         </aside>
     <?php
