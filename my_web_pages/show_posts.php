@@ -43,12 +43,6 @@ function show_posts(Array $posts) {
                 </button>
                 <input type="hidden" name="post_id" value="<?php echo $post["id"]; ?>">
             </form>
-            <!-- <form>
-                <label for="like" class="d-none">Click here to like this post</label>
-                <button id="like" type="button" onclick="like_post(<?php echo $post['id'] ?>);" class="border-0 bi bi-heart-fill"> <?php echo $post["likes"] ?></button>
-                <label for="comments" class="d-none">Click here to go to the comments</label>
-                <a href="show_comments_of_post.php?post_id=<?php echo $post["id"] ?>" id="comments" class="border-0 bi bi-chat-right-fill" <?php echo get_comments_number($post["id"]) ?> >
-            </form> -->
             <form action="write_post.php" method="get" class="d-inline">
                 <input type="hidden" name="reply" value="<?php echo $post["id"]; ?>">
                 <button type="submit" id="reply_post" class="bi bi-send bg-transparent border-0"></button>
