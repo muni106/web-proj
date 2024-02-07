@@ -32,18 +32,18 @@ function get_posts_from_author_id(int $author_id): Array {
 function get_feed_from_user_id(int $id): Array {
     $mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE);
     $stmt = $mysqli->prepare(
-       "SELECT body, posts.code, image_path, username, datetime, posts.author
+       "SELECT body, posts.code, image_path, username, datetime, posts.author, posts.id
         FROM followers JOIN members ON (followers.followee_id = members.id) JOIN posts ON (members.id = posts.author)
-        WHERE followers.followee_id = ?"
+        WHERE followers.follower_id = ?"
     );
     $stmt->bind_param('i', $id);
     $stmt->execute(); // esegue la query appena creata.
     $stmt->store_result();
-    $stmt->bind_result($body, $code, $image_path, $username, $datetime, $author);
+    $stmt->bind_result($body, $code, $image_path, $username, $datetime, $author, $post_id);
     $result = array();
     while ($stmt->fetch()):
         array_push($result, array(
-            "id" => $id,
+            "id" => $post_id,
             "author" => $author,
             "body" => $body, 
             "code" => $code,
