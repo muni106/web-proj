@@ -22,49 +22,10 @@
     require_once("get_user_info.php");
     $user_info = get_user_info($_SESSION["user_id"]);
     ?>
-    <?php require("headerProfile.php") ?>
-    <aside id="menu_desktop">
-        <img src="assets/images/logo.png" alt="logo">
-        <ul>
-            <li>
-                <a href="feed.php">
-                    <img src="./assets/images/Home.png" alt="homeImg">
-                    Home
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="./assets/images/Explore.png" alt="explore">
-                    Explore
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="./assets/images/Saved.png" alt="savedPosts">
-                    Saved
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="./assets/images/Notifications.png" alt="notifications">
-                    Notifications
-                </a>
-            </li>
-            <li>
-                <a href="write_post.php">
-                    <img src="./assets/images/Write.png" alt="writePost">
-                    Write
-                </a>
-            </li>
-            <li>
-                <a href="userProfileMe.php">
-                    <img src="./assets/images/Profile.png" alt="profilePersonal">
-                    Profile
-                </a>
-            </li>
-        </ul>
-    </aside>
-
+    <?php 
+    require("navbar.php");
+    require("headerProfile.php");
+    ?>
     <main class="container p-2">
         <h1 class="fw-bolder py-3 d-inline col-10">Write a post</h1>
         <form action="./process_write_post.php" method="post" enctype="multipart/form-data" class="d-grid gap-4 my-2">
@@ -98,7 +59,7 @@
         </form>
     </main>
 
-        <aside id="left_bar_desktop p-0">
+        <aside id="left_bar_desktop">
             <?php require_once("search_form.php") ?>
         </aside>
 
