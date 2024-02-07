@@ -42,8 +42,8 @@
         ));
     }
     ?>
-
-    <main class="m-3 col-7">
+    <?php require("navbar.php"); ?>
+    <main class="m-3 col-lg-7">
         <h1 class="m-2">Search results:</h1>
         <?php
         require_once("users_list.php");
