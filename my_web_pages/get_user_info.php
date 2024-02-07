@@ -95,7 +95,7 @@ function get_following(int $user_id): Array {
 function get_followers(int $user_id): Array {
     $mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE);
     $stmt = $mysqli->prepare(
-        "SELECT members.id, username, profile_image  FROM followers JOIN members on followee_id = members.id WHERE followee_id = ?"
+        "SELECT members.id, username, profile_image  FROM followers JOIN members on follower_id = members.id WHERE followee_id = ?"
     );
     $stmt->bind_param('i', $user_id);
     $stmt->execute();
