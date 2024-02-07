@@ -1,5 +1,5 @@
 .btn {
-  color: rgb(43, 43, 43);
+  color: lightgray;
   background-color: rgba(181, 110, 34, 255);
 }
 
@@ -25,8 +25,8 @@
 
   #profileImage {
     vertical-align: middle;
-    width: 20vw;
-    height: 20vw;
+    width: 15vw;
+    height: 15vw;
     border-radius: 100%;
   }
 
