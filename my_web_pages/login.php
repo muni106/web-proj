@@ -12,10 +12,10 @@
     <script type="text/javascript" src="./assets/js/sha512.js"></script>
     <script type="text/javascript" src="./assets/js/forms.js"></script>
     <header class="d-flex justify-content-center">
-        <img src="./assets/images/logo.png" alt="Petris logo" />
+        <a href="index.php"> <img src="./assets/images/back.png" alt="go back" class="w-25 p-2 m-2"> </a>
+        <img src="./assets/images/logo.png" alt="Petris logo" class="m-2" />
     </header>
     <main>
-        <a href="index.php"> <img src="./assets/images/back.png" alt="left arrow" height="5%" width="5%"> </a>
         <h1 class="fw-bolder my-5 p-3">Sign in to Petris</h1>
         <?php
         if(isset($_GET['error'])) { 

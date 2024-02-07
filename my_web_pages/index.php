@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/landing.css">
 </head>
-<body>
+<body class="m-2">
     <?php
         require_once("db_connect.php");
         sec_session_start();
