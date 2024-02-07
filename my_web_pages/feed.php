@@ -29,7 +29,7 @@
             show_posts($posts);
             ?>
         </main>
-        <aside id="left_bar_desktop p-0">
+        <aside id="left_bar_desktop">
             <?php require_once("search_form.php") ?>
         </aside>
     <?php

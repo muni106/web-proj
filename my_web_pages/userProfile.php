@@ -29,47 +29,7 @@ $user_info = get_user_info($_GET["user_id"]);
     $user_id = $_GET["user_id"];
     if (user_exists($user_id)) :
     ?>
-        <aside id="menu_desktop" class="col-2 p-1">
-            <img src="assets/images/logo.png" alt="logo">
-            <ul>
-                <li>
-                    <a href="feed.php">
-                        <img src="./assets/images/Home.png" alt="homeImg">
-                        Home
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="./assets/images/Explore.png" alt="explore">
-                        Explore
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="./assets/images/Saved.png" alt="savedPosts">
-                        Saved
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="./assets/images/Notifications.png" alt="notifications">
-                        Notifications
-                    </a>
-                </li>
-                <li>
-                    <a href="write_post.php">
-                        <img src="./assets/images/Write.png" alt="writePost">
-                        Write
-                    </a>
-                </li>
-                <li>
-                    <a href="userProfileMe.php">
-                        <img src="./assets/images/Profile.png" alt="profilePersonal">
-                        Profile
-                    </a>
-                </li>
-            </ul>
-        </aside>
+        <?php require "./navbar.php"; ?>
 
         <main class="container">
             <div class="row m-2">
@@ -107,7 +67,7 @@ $user_info = get_user_info($_GET["user_id"]);
             ?>
         </main>
 
-        <aside id="left_bar_desktop p-0" class="col-2 p-1">
+        <aside id="left_bar_desktop">
             <?php require_once("search_form.php") ?>
         </aside>
     <?php
