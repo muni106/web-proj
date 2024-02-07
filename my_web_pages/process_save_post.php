@@ -8,4 +8,5 @@ $post_id = $_POST["post_id"];
 
 $user_id = get_id_from_username($username);
 save_post($post_id, $user_id);
-?>
+
+header('Location: feed.php', true, 303);

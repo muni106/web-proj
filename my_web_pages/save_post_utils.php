@@ -13,7 +13,7 @@ function get_id_from_username(string $username): int {
 
 function save_post(int $post_id, int $user_id) {
    global $mysqli; 
-   if ($stmt = $mysqli->prepare("INSERT into saved_posts (post_id, user_id) VALUES (?, ?)")) {
+   if ($stmt = $mysqli->prepare("INSERT IGNORE into saved_posts (post_id, user_id) VALUES (?, ?)")) {
         $stmt->bind_param("ii", $post_id, $user_id);
         $stmt->execute();
    }
