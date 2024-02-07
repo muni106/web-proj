@@ -8,7 +8,7 @@
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="./show_search_results.php?word=">
                 <img src="./assets/images/Explore.png" alt="explore">
                 Explore
             </a>
