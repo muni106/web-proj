@@ -21,7 +21,7 @@
     ?>
         <?php require("navbar.php") ?>
         <main class="container">
-            <h1 class="fw-bolder border-bottom py-3">Posts</h1>
+            <h1 class="fw-bolder border-bottom py-3">For you</h1>
             <?php
             require_once("get_feed.php");
             $posts = get_feed_from_user_id($_SESSION["user_id"]);

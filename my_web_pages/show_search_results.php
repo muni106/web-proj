@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="assets/css/chrome.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/navbar.css">
-    <link rel="stylesheet" href="assets/css/search.css">
 </head>
 <body>
     <?php

@@ -10,7 +10,7 @@
             </label>
 
             <ul id="menu__box">
-            <li><a class="menu__item" href="index.php">Home</a></li>
+            <li><a class="menu__item" href="feed.php">Home</a></li>
             <li><a class="menu__item" href="show_search_results.php?word=">Explore</a></li>
             <li><a class="menu__item" href="saved_posts.php?">Saved</a></li>
             <li><a class="menu__item" href="notifications.php">Notifications</a></li>
