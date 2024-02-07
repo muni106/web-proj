@@ -60,11 +60,33 @@ function get_all_feed(): Array {
     $mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE);
     $stmt = $mysqli->prepare(
        "SELECT body, code, image_path, author, datetime, members.id
-        FROM members JOIN posts ON (members.id = posts.author);"
+        FROM members JOIN posts ON (members.id = posts.author)"
     );
     $stmt->execute(); // esegue la query appena creata.
     $stmt->store_result();
     $stmt->bind_result($body, $code, $image_path, $author, $datetime, $id);
+    $result = array();
+    while ($stmt->fetch()):
+        array_push($result, array(
+            "id" => $id,
+            "author" => $author,
+            "body" => $body, 
+            "code" => $code,
+            "image_path" => $image_path,
+            "likes" => get_likes_of_post($id),
+            "datetime" => $datetime
+        ));
+    endwhile;
+    return $result;
+}
+
+function get_saved_posts($user_id): Array {
+    $mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE);
+    $stmt = $mysqli->prepare("SELECT posts.id, body, code, image_path, members.id, datetime  FROM saved_posts JOIN posts ON post_id = posts.id JOIN members on members.id = posts.author WHERE posts.author = ?");
+    $stmt->bind_param('i', $user_id);
+    $stmt->execute(); // esegue la query appena creata.
+    $stmt->store_result();
+    $stmt->bind_result($id, $body, $code, $image_path, $author, $datetime);
     $result = array();
     while ($stmt->fetch()):
         array_push($result, array(

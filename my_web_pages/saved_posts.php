@@ -25,24 +25,10 @@
             <h1 class="fw-bolder border-bottom py-3">Saved posts</h1>
             <?php
             require_once("get_feed.php");
-            $posts = get_all_feed();
             require_once("save_post_utils.php");
             require_once("show_posts.php");
-            $condition = function ($value) {
-                $mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE);
-                $post_id = $value["id"];
-                $author = $value["author"];
-                if ($stmt = $mysqli->prepare("SELECT post_id FROM saved_posts WHERE post_id = ?  AND user_id = ?")) {
-                    $stmt->bind_param('ii', $post_id, $author);
-                    $stmt->execute();
-                    $stmt->store_result();
-                    $stmt->bind_result($result);
-                    $stmt->fetch();
-                }
-                return !is_null($result);
-            };
-            $filtered_posts = array_filter($posts, $condition);
-            show_posts($filtered_posts);
+            $posts = get_saved_posts($_SESSION["user_id"]);
+            show_posts($posts);
             ?>
 
         </main>
