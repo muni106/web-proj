@@ -154,7 +154,7 @@
     left: 0 !important;
   }
 
-  .menu__btn {
+  #menu__btn {
     position: relative;
     width: 8vw;
     height: 8vw;
@@ -162,9 +162,9 @@
     z-index: 1;
   }
 
-  .menu__btn > span,
-  .menu__btn > span::before,
-  .menu__btn > span::after {
+  #menu__btn > span,
+  #menu__btn > span::before,
+  #menu__btn > span::after {
     display: block;
     position: absolute;
     width: 100%;
@@ -172,15 +172,16 @@
     background-color: rgba(183, 182, 182, 1);
     transition-duration: 0.25s;
   }
-  .menu__btn > span::before {
+  #menu__btn > span::before {
     content: "";
     top: -8px;
   }
-  .menu__btn > span::after {
+  #menu__btn > span::after {
     content: "";
     top: 8px;
   }
-  .menu__box {
+
+  #menu__box {
     display: block;
     position: fixed;
     top: 0;
